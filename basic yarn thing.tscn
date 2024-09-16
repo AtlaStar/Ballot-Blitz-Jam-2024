@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt4w4kj38fkmk"]
+
+[ext_resource type="Script" path="res://addons/gdyarn__broken/yarn_runner.gd" id="1_pk4qv"]
+[ext_resource type="Script" path="res://addons/gdyarn__broken/compiled_yarn_program.gd" id="2_1opfm"]
+[ext_resource type="Script" path="res://addons/gdyarn__broken/core/variable_storage.gd" id="3_t7lv8"]
+[ext_resource type="Script" path="res://addons/gdyarn__broken/yarn_gui.gd" id="4_33bwh"]
+
+[sub_resource type="Resource" id="Resource_dgnnp"]
+script = ExtResource("2_1opfm")
+_programName = "echo"
+_directory = "res://"
+_yarnPrograms = Array[String](["res://addons/gdyarn/examples/inline_expressions.yarn", "res://addons/gdyarn/examples/example1.yarn"])
+
+[node name="Node" type="Node"]
+
+[node name="YarnRunner" type="Node" parent="."]
+script = ExtResource("1_pk4qv")
+_variableStorage = NodePath("../VariableStorage")
+_compiledYarnProgram = SubResource("Resource_dgnnp")
+
+[node name="VariableStorage" type="Node" parent="."]
+script = ExtResource("3_t7lv8")
+
+[node name="YarnDisplay" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.803
+anchor_bottom = 0.596
+offset_right = -71.056
+offset_bottom = -28.208
+script = ExtResource("4_33bwh")
+_yarnRunner = NodePath("../YarnRunner")
+_text = NodePath("../RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

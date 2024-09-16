@@ -5,15 +5,17 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const WIGGLE_INI = 0
 
-@export var x_rot = -7.0
+@export var x_rot = rotation.x
 @export var increment = PI/16
 @export_range(0.0005, 0.002) var factor = .002
 @onready var cam = get_node("Camera")
 @onready var text_node = get_node("Interact")
 @onready var original_text = text_node.text
+
+
 var wiggle = 0
 var last_direction = Vector3(0.0,0.0,0.0)
-var node_dict = {}
+var node_list = []
 
 func _ready() -> void:
 	EventBus.playerEntered.connect(enqueue_node)
@@ -22,14 +24,14 @@ func _ready() -> void:
 	cam.rotation.x = x_rot
 
 func enqueue_node(id):
-	node_dict.get_or_add(id)
+	node_list.push_back(id)
 
 func remove_node(id):
-	node_dict.erase(id)
+	node_list.erase(id)
 
 func access_dialog():
-	if node_dict.size():
-		var id = node_dict.keys().front()
+	if node_list.size():
+		var id = node_list.pop_front()
 		id.enable_local_ui()
 	return ""
 
@@ -38,10 +40,10 @@ func _physics_process(_delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * _delta
 
-	text_node.visible = !node_dict.is_empty()
+	text_node.visible = !node_list.is_empty()
 	
 	if text_node.visible:
-		var npc_name = node_dict.keys().front().npc_name
+		var npc_name = node_list.front().npc_name
 		text_node.text = original_text.format({"NPC": npc_name})
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept"):

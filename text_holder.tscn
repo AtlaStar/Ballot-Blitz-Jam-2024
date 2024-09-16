@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://xfetfnobnfte"]
+
+[ext_resource type="Script" path="res://text_holder.gd" id="1_l2cl4"]
+
+[node name="TextHolder" type="Node"]
+script = ExtResource("1_l2cl4")
+text_speed = 1.4
+
+[connection signal="finished" from="." to="." method="_finished"]
+[connection signal="next_text_panel" from="." to="." method="_next_line"]
+[connection signal="pause" from="." to="." method="_pause_holder"]
+[connection signal="play" from="." to="." method="_play"]
+[connection signal="waiting" from="." to="." method="_waiting"]

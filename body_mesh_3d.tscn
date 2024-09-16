@@ -1,0 +1,268 @@
+[gd_scene load_steps=33 format=3 uid="uid://ttbdxt0maet5"]
+
+[ext_resource type="Texture2D" uid="uid://cew5xr5o3gw4g" path="res://crumpled_paper/paper_0022_ao_1k.jpg" id="2_bivtq"]
+[ext_resource type="Texture2D" uid="uid://cdjoniw2j7wgr" path="res://crumpled_paper/paper_0022_height_1k.png" id="3_k312o"]
+[ext_resource type="Texture2D" uid="uid://duvrr06myipgi" path="res://crumpled_paper/paper_0022_normal_opengl_1k.png" id="4_1xnny"]
+[ext_resource type="Texture2D" uid="uid://cxtwlsvr5c6e5" path="res://crumpled_paper/paper_0022_roughness_1k.jpg" id="5_ni6go"]
+[ext_resource type="Texture2D" uid="uid://dtejruwsnhtkb" path="res://puppet pieces/guy/head1.png" id="6_0vukd"]
+[ext_resource type="Texture2D" uid="uid://dhx3whrf08lrb" path="res://puppet pieces/guy/leg1.png" id="7_8dauv"]
+[ext_resource type="Texture2D" uid="uid://dctg6c5foroy3" path="res://puppet pieces/guy/eyes1.png" id="8_fo4fv"]
+[ext_resource type="Texture2D" uid="uid://dyybcqqo78hq1" path="res://puppet pieces/guy/arm1.png" id="9_yeb44"]
+[ext_resource type="Texture2D" uid="uid://drte438nsp6fu" path="res://puppet pieces/guy/mouth1.png" id="10_0fjhv"]
+[ext_resource type="Texture2D" uid="uid://bub2cq78ctws1" path="res://puppet pieces/guy/hair1.png" id="11_1twlc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_inq3b"]
+load_path = "res://.godot/imported/torso1.png-29acaefc7887c4d65aa4193b88d96a31.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlfrw"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = SubResource("CompressedTexture2D_inq3b")
+roughness_texture = ExtResource("5_ni6go")
+emission = Color(0.0313726, 0.329412, 0.0627451, 1)
+emission_energy_multiplier = 0.0
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("4_1xnny")
+rim = 0.92
+rim_tint = 0.89
+ao_enabled = true
+ao_texture = ExtResource("2_bivtq")
+heightmap_enabled = true
+heightmap_scale = 2.07
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("3_k312o")
+uv1_triplanar_sharpness = 2.63902
+texture_filter = 2
+grow_amount = 0.2
+point_size = 1.9
+
+[sub_resource type="QuadMesh" id="QuadMesh_x5yp3"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(11, 11)
+material = SubResource("StandardMaterial3D_wlfrw")
+uv2_padding = 1.45
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwq20"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("6_0vukd")
+roughness_texture = ExtResource("5_ni6go")
+normal_enabled = true
+normal_texture = ExtResource("4_1xnny")
+ao_enabled = true
+ao_texture = ExtResource("2_bivtq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_xqs1h"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_bwq20")
+
+[sub_resource type="BoxMesh" id="BoxMesh_0yafj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxh2l"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("7_8dauv")
+roughness_texture = ExtResource("5_ni6go")
+normal_enabled = true
+normal_texture = ExtResource("4_1xnny")
+ao_enabled = true
+ao_texture = ExtResource("2_bivtq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bknm4"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_jxh2l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wl38u"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("7_8dauv")
+roughness_texture = ExtResource("5_ni6go")
+normal_enabled = true
+normal_texture = ExtResource("4_1xnny")
+ao_enabled = true
+ao_texture = ExtResource("2_bivtq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_3sxj3"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_wl38u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sluki"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+albedo_texture = ExtResource("8_fo4fv")
+roughness_texture = ExtResource("5_ni6go")
+normal_enabled = true
+normal_texture = ExtResource("4_1xnny")
+ao_enabled = true
+ao_texture = ExtResource("2_bivtq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_k0xrg"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_sluki")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxksj"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("9_yeb44")
+roughness_texture = ExtResource("5_ni6go")
+normal_enabled = true
+normal_texture = ExtResource("4_1xnny")
+ao_enabled = true
+ao_texture = ExtResource("2_bivtq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ft41e"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_gxksj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1o8h1"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("9_yeb44")
+roughness_texture = ExtResource("5_ni6go")
+normal_enabled = true
+normal_texture = ExtResource("4_1xnny")
+
+[sub_resource type="QuadMesh" id="QuadMesh_xotmh"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_1o8h1")
+flip_faces = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmdbi"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+albedo_texture = ExtResource("10_0fjhv")
+roughness_texture = ExtResource("5_ni6go")
+normal_enabled = true
+normal_texture = ExtResource("4_1xnny")
+ao_enabled = true
+ao_texture = ExtResource("2_bivtq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_k75m6"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(7, 7)
+material = SubResource("StandardMaterial3D_tmdbi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7c2j4"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("11_1twlc")
+roughness_texture = ExtResource("5_ni6go")
+normal_enabled = true
+normal_texture = ExtResource("4_1xnny")
+ao_enabled = true
+ao_texture = ExtResource("2_bivtq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_htw4n"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_7c2j4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qiec"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("11_1twlc")
+roughness_texture = ExtResource("5_ni6go")
+normal_enabled = true
+normal_texture = ExtResource("4_1xnny")
+ao_enabled = true
+ao_texture = ExtResource("2_bivtq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_86r8o"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_8qiec")
+
+[node name="BodyMesh3D" type="MeshInstance3D"]
+ignore_occlusion_culling = true
+mesh = SubResource("QuadMesh_x5yp3")
+
+[node name="HeadMesh3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.545, 0, 0, 0, 1.545, 0, 0, 0, 1.545, -0.0204373, 0.0970146, 0.0448824)
+mesh = SubResource("QuadMesh_xqs1h")
+
+[node name="head_to_body" type="MeshInstance3D" parent="HeadMesh3D"]
+transform = Transform3D(0.0477337, 0, 0, 0, 0.0274806, 0, 0, 0, 0.0256963, 0.0218992, 0.0143416, -0.0139844)
+mesh = SubResource("BoxMesh_0yafj")
+skeleton = NodePath("../..")
+
+[node name="LeftLegMesh3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.86846, 0.0758942, 0, -0.0758942, 1.86846, 0, 0, 0, 1.87, 0.0770099, -0.0995776, -0.0262834)
+mesh = SubResource("QuadMesh_bknm4")
+
+[node name="RightLegMesh3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.89704, 0.106075, 0.000318399, -0.106075, 1.89704, -2.42299e-05, -0.000319255, 6.41625e-06, 1.9, -0.333743, -0.0630544, -0.0665424)
+mesh = SubResource("QuadMesh_3sxj3")
+
+[node name="Eyes" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0760669, 0.171861, 0.0480199)
+mesh = SubResource("QuadMesh_k0xrg")
+
+[node name="LeftArm" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.00942, 0.778634, 0, -0.778634, 2.00942, 0, 0, 0, 2.155, -0.0219688, 0.196874, 0.0442385)
+mesh = SubResource("QuadMesh_ft41e")
+
+[node name="left_arm_to_body" type="MeshInstance3D" parent="LeftArm"]
+transform = Transform3D(0.0319101, -0.00711859, 0, 0.0123649, 0.0183709, 0, 0, 0, 0.0184227, 0.0906155, -0.0386054, -0.0097272)
+mesh = SubResource("BoxMesh_0yafj")
+skeleton = NodePath("../..")
+
+[node name="RightArm" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.08363, -0.390995, 3.20111e-07, -0.390995, 2.08363, 1.77493e-07, -3.47355e-07, 1.1541e-07, -2.12, 0.0185337, 0.144969, -0.0473539)
+mesh = SubResource("QuadMesh_xotmh")
+skeleton = NodePath("../..")
+
+[node name="left_arm_to_body2" type="MeshInstance3D" parent="RightArm"]
+transform = Transform3D(-0.0164777, 0.0176379, -3.06833e-09, 0.030637, 0.00948633, 1.01946e-09, 4.36765e-09, -2.3735e-09, -0.0187268, 0.0820905, -0.0387611, -0.0123288)
+mesh = SubResource("BoxMesh_0yafj")
+skeleton = NodePath("../..")
+
+[node name="Mouth" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.56957, 0.773922, 0, -0.773922, -1.56957, 0, 0, 0, 1.75, -0.21202, 0.236863, 0.0536136)
+sorting_use_aabb_center = false
+mesh = SubResource("QuadMesh_k75m6")
+
+[node name="Hair" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.36, 0, 0, 0, 1.36, 0, 0, 0, 1.36, -0.0374993, 0.1456, 0.0454606)
+mesh = SubResource("QuadMesh_htw4n")
+
+[node name="Hair2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.36, 0, 0, 0, 1.36, 0, 0, 0, 1.36, -0.0374993, 0.1456, 0.0429904)
+mesh = SubResource("QuadMesh_86r8o")
