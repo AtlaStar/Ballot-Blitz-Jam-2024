@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=6 format=3 uid="uid://dp4227o83oty7"]
+
+[ext_resource type="PackedScene" uid="uid://1wdifkeydp1t" path="res://local_ui_root/scene.tscn" id="1_42s5m"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_6srvn"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_e4tmt"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="5_iqyr7"]
+
+[sub_resource type="Resource" id="Resource_nkmlt"]
+script = ExtResource("2_6srvn")
+scene = ExtResource("3_e4tmt")
+overrides = {}
+
+[resource]
+script = ExtResource("5_iqyr7")
+name = "speeeeech_bubble"
+base_scene = ExtResource("1_42s5m")
+base_overrides = {}
+layers = Array[ExtResource("2_6srvn")]([SubResource("Resource_nkmlt")])
+metadata/_latest_layer = -1

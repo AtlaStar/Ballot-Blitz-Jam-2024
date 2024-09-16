@@ -1,62 +1,46 @@
-extends Node3D
+
+extends DialogicLayoutBase
+
+## This layout won't do anything on its own
+
+var registered_characters: Dictionary = {}
+@onready var Display = $TextDisplay
+var mesh
+@export_group("Main")
+func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+	DialogicUtil.autoload().Text.about_to_show_text.connect(_on_dialogic_text_event)
+
+func _process(_delta):
+	if mesh != null:
+		Display.rotation = mesh.rotation
+		Display.position = mesh.position + Vector3(0.0,1.0,0.0)
+	pass
+
+func register_character(character:Variant, node:RigidBody3D):
+	if typeof(character) == TYPE_STRING:
+		var character_string: String = character
+		if character.begins_with("res://"):
+			character = load(character)
+		else:
+			character = DialogicResourceUtil.get_character_resource(character)
+		if not character:
+			printerr("[Dialogic] Textbubble: Tried registering character from invalid string '", character_string, "'.")
+	mesh = node
+	registered_characters[character] = node
 
 
-var owning_node = null
-var ratio = 1;
-var printing = false
+func _get_persistent_info() -> Dictionary:
+	return {"3DTextRegisters": registered_characters}
 
-signal awaiting_player
 
-@export_range(0.1, 1.0, 0.05) var text_speed = 1.0
-@onready var rich_text_node = $SubViewport/RichTextLabel
-@onready var text_backdrop = $TextDisplay
+func _load_persistent_info(info: Dictionary) -> void:
+	var register_info: Dictionary = info.get("3DTextRegisters", {})
+	for character in register_info:
+		if is_instance_valid(register_info[character]):
+			register_character(character, register_info[character])
 
-@export var holders: Array[Resource]
 
-var TextHolderNode = preload("res://text_holder.tscn")
-
-var default_position
-var holder_instance
-# Called when the node enters the scene tree for the first time.
-var is_finished = false
-
-func _ready():
-	holder_instance = TextHolderNode.instantiate()
-	#add_child(holder_instance)
-	owning_node = get_parent()
-	default_position = position
-	reset_text(owning_node.getString())
-	
-	rich_text_node.finished.connect(
-		func():
-			if is_equal_approx(rich_text_node.visible_ratio, 1.0):
-				awaiting_player.emit()
-	)
-	#holder_instance.play.emit()
-	#holder_instance.playhead_incremented.connect(debug)
-	#holder_instance.finished.connect(detach)
-
-func debug(val):
-	print(val)
-func detach():
-	holder_instance.playhead_incremented.disconnect(debug)
-	holder_instance.finished.disconnect(detach)
-
-func reset_text(string):
-	rich_text_node.visible_ratio = 0
-	ratio = 1.0/string.length() * text_speed
-	is_finished = false
-	text_backdrop.visible = false
-	#rich_text_node.text = "[center]" + string + "[/center]"
-
-func process_text():
-	text_backdrop.visible = true
-	var value = clamp(rich_text_node.visible_ratio + ratio, 0.0, 1.0)
-	rich_text_node.visible_ratio = value
-	is_finished = is_equal_approx(value, 1.0)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if printing:
-		process_text()
+func _on_dialogic_text_event(info:Dictionary):
 	pass

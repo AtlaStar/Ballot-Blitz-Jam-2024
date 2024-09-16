@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 const WIGGLE_INI = 0
 
@@ -11,8 +11,12 @@ const WIGGLE_INI = 0
 @onready var cam = get_node("Camera")
 @onready var text_node = get_node("Interact")
 @onready var original_text = text_node.text
+@onready var CameraPivot = $Camera
+@export var sensitivity = 1.0
 
-
+var look_rot : Vector2
+var min_angle = -85
+var max_angle = -min_angle
 var wiggle = 0
 var last_direction = Vector3(0.0,0.0,0.0)
 var node_list = []
@@ -22,18 +26,24 @@ func _ready() -> void:
 	EventBus.playerLeft.connect(remove_node)
 	EventBus.endOfDialog.connect(remove_node)
 	cam.rotation.x = x_rot
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 func enqueue_node(id):
 	node_list.push_back(id)
 
 func remove_node(id):
-	node_list.erase(id)
+	node_list = []
+	print(node_list)
 
 func access_dialog():
-	if node_list.size():
-		var id = node_list.pop_front()
-		id.enable_local_ui()
-	return ""
+	var id = node_list.front()
+	if Dialogic.current_timeline != null && id != null:
+		return
+	if id is Node3D:
+		var style = Dialogic.Styles.load_style("speech_bubble_test")
+		style.register_character(id.npc_name, id.get_node("TextBubbleLocation"))
+		var layout = Dialogic.start(id.npc_name + "_timeline")
 
 func _physics_process(_delta: float) -> void:
 	# Add the gravity.
@@ -46,14 +56,14 @@ func _physics_process(_delta: float) -> void:
 		var npc_name = node_list.front().npc_name
 		text_node.text = original_text.format({"NPC": npc_name})
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("dialogic_default_action"):
 		access_dialog()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
+	
 	if direction:
 		wiggle += increment * direction.z
 		last_direction = direction
@@ -71,3 +81,12 @@ func _physics_process(_delta: float) -> void:
 	
 	move_and_slide()
 	cam.rotation.x = x_rot + cos(wiggle) * factor
+	
+	CameraPivot.rotation_degrees.x = look_rot.x
+	rotation_degrees.y = look_rot.y
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		look_rot.y -= (event.relative.x * sensitivity)
+		look_rot.x -= (event.relative.y * sensitivity)
+		look_rot.x = clamp(look_rot.x, min_angle, max_angle)

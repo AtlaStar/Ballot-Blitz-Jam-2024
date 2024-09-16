@@ -1,0 +1,40 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.378906, 0.0606842, 0.0606842, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {
+"Dead": {
+"mode": 0,
+"name": "Dead",
+"pitch_base": 1.0,
+"pitch_variance": 0.0,
+"skip_characters": 0.0,
+"sound_path": "",
+"volume_base": 0.0,
+"volume_variance": 0.0
+},
+"Worm": {
+"mode": 1,
+"name": "Worm",
+"pitch_base": 0.5,
+"pitch_variance": 0.3,
+"skip_characters": 1.0,
+"sound_path": "res://MIchaelVoiceClips/papa_end_5.wav",
+"volume_base": 0.8,
+"volume_variance": 0.3
+}
+},
+"style": ""
+},
+"default_portrait": "",
+"description": "",
+"display_name": "Mayor Nem A Tode",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {},
+"scale": 1.0
+}

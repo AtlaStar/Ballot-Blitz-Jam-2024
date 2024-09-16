@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=7 format=3 uid="uid://dqwvicq615e2i"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_r87li"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="3_7usu4"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_ukbe5"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_evrwc"]
+
+[sub_resource type="Resource" id="Resource_bivle"]
+script = ExtResource("1_r87li")
+scene = ExtResource("4_ukbe5")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_jqk8r"]
+script = ExtResource("1_r87li")
+scene = ExtResource("3_7usu4")
+overrides = {
+"box_modulate_by_character_color": "true",
+"box_wobble_amount": "0.22",
+"box_wobble_speed": "0.82"
+}
+
+[resource]
+script = ExtResource("10_evrwc")
+name = "cool dialogic style"
+base_overrides = {}
+layers = Array[ExtResource("1_r87li")]([SubResource("Resource_bivle"), SubResource("Resource_jqk8r")])
+metadata/_latest_layer = 1

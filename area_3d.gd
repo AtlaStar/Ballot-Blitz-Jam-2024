@@ -1,38 +1,22 @@
 extends Area3D
 
-@export var strings: Array[String] = []
 @export var npc_name = "null"
-@export var repeats_last_dialog = false
-@export var sound_fx: AudioStreamOggVorbis = null
+@export var follow_player = true
 var current_string = 0
 var tween = null
 var look_towards = null
 var look_at_point = null
-@onready var sfx_player = owner.get_node("AudioStreamPlayer3D")
-
-var local_ui_instance = null
+#var UIRoot = preload("res://local_ui_root/scene.tscn")
+var local_root = null
 # Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	if sound_fx != null:
-		sfx_player.stream = sound_fx
-	local_ui_instance = preload("res://local_ui_root/scene.tscn").instantiate()
-	add_child(local_ui_instance)
-	local_ui_instance.rich_text_node.finished.connect(play_sound)
+	#local_root = UIRoot.instantiate()
+	#add_child(local_root)
+	#local_root.get_node("TextDisplay").position = position
 	area_entered.connect(area_entered_delegate)
 	area_exited.connect(area_exited_delegate)
 	pass # Replace with function body.
-
-func play_sound():
-	if sound_fx != null && local_ui_instance.rich_text_node.visible_ratio != 0.0:
-		sfx_player.pitch_scale = randf_range(0.8, 1.2)
-		sfx_player.play()
-
-func enable_local_ui():
-	local_ui_instance.printing = true
-	
-func disable_local_ui():
-	local_ui_instance.printing = false
-	local_ui_instance.reset_text(getString())
 
 func look_towards_area(target):
 	if tween != null:
@@ -52,30 +36,15 @@ func area_entered_delegate(_dummy):
 	look_towards = _dummy
 	EventBus.playerEntered.emit(self)
 func area_exited_delegate(_dummy):
-	disable_local_ui()
 	look_towards = null
 	EventBus.playerLeft.emit(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	local_ui_instance.rich_text_node.text = "[center]" + getString() + "[center]"
+	if !follow_player:
+		return
 	if has_overlapping_areas() && look_towards != null:
 		if look_at_point != look_towards.owner.position:
 			look_at_point = look_towards.owner.position
 			look_towards_area(look_towards)
 	pass
-
-func getAndIncrementString() -> String:
-	if current_string < strings.size():
-		var ret = current_string
-		current_string += 1
-		if !repeats_last_dialog && current_string == strings.size():
-			EventBus.endOfDialog.emit(self)
-		return strings[ret]
-	return ""
-	
-func getString() -> String:
-	if current_string < strings.size():
-		return strings[current_string]
-	return ""
-	

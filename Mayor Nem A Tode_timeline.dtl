@@ -1,0 +1,17 @@
+if {met_mayor} == false:
+	"Mayor Nem A Tode": [mood=Worm]EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEK
+	"Mayor Nem A Tode": [mood=Worm]YOU NEED TO LEAVE THE PREMISES BEFORE I AM FORCED TO HAVE YOU ARRESTED FOR HARRASSING THE TOWN OFFICIAL
+	set {met_mayor} = true
+if {talked_to_mayor_count} > 10:
+	"Mayor Nem A Tode": [mood=Dead](Now you are just being a bully)
+	[end_timeline]
+set {talked_to_mayor_count} += 1
+if {talked_to_mayor_count} >= 3:
+	"Mayor Nem A Tode": [mood=Worm][lspeed=.0001]REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE[lspeed]
+	set {snarky_val} += 0.5
+	set {demure_val} -= 0.5
+	if {talked_to_mayor_count} == 10:
+		set {troll_val} = 10
+		"Mayor Nem A Tode": [mood=Dead](You feel as if your trolling has altered the fabric of the universe, imbuing you with max troll stat)
+else:
+	"Mayor Nem A Tode": [mood=Worm]UNACCEPTIBLE! THIS IS WHY OUTSIDERS SHOULD STAY AWAY FROM THIS TOWN

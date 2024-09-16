@@ -1,7 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://ttbdxt0maet5"]
+[gd_scene load_steps=31 format=3 uid="uid://ttbdxt0maet5"]
 
+[ext_resource type="Material" uid="uid://cxeoy7wkpr818" path="res://body_mesh_3d.tres" id="1_tsvrt"]
 [ext_resource type="Texture2D" uid="uid://cew5xr5o3gw4g" path="res://crumpled_paper/paper_0022_ao_1k.jpg" id="2_bivtq"]
-[ext_resource type="Texture2D" uid="uid://cdjoniw2j7wgr" path="res://crumpled_paper/paper_0022_height_1k.png" id="3_k312o"]
 [ext_resource type="Texture2D" uid="uid://duvrr06myipgi" path="res://crumpled_paper/paper_0022_normal_opengl_1k.png" id="4_1xnny"]
 [ext_resource type="Texture2D" uid="uid://cxtwlsvr5c6e5" path="res://crumpled_paper/paper_0022_roughness_1k.jpg" id="5_ni6go"]
 [ext_resource type="Texture2D" uid="uid://dtejruwsnhtkb" path="res://puppet pieces/guy/head1.png" id="6_0vukd"]
@@ -11,40 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://drte438nsp6fu" path="res://puppet pieces/guy/mouth1.png" id="10_0fjhv"]
 [ext_resource type="Texture2D" uid="uid://bub2cq78ctws1" path="res://puppet pieces/guy/hair1.png" id="11_1twlc"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_inq3b"]
-load_path = "res://.godot/imported/torso1.png-29acaefc7887c4d65aa4193b88d96a31.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlfrw"]
-resource_local_to_scene = true
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-cull_mode = 2
-diffuse_mode = 3
-albedo_texture = SubResource("CompressedTexture2D_inq3b")
-roughness_texture = ExtResource("5_ni6go")
-emission = Color(0.0313726, 0.329412, 0.0627451, 1)
-emission_energy_multiplier = 0.0
-normal_enabled = true
-normal_scale = 0.5
-normal_texture = ExtResource("4_1xnny")
-rim = 0.92
-rim_tint = 0.89
-ao_enabled = true
-ao_texture = ExtResource("2_bivtq")
-heightmap_enabled = true
-heightmap_scale = 2.07
-heightmap_flip_binormal = true
-heightmap_texture = ExtResource("3_k312o")
-uv1_triplanar_sharpness = 2.63902
-texture_filter = 2
-grow_amount = 0.2
-point_size = 1.9
-
 [sub_resource type="QuadMesh" id="QuadMesh_x5yp3"]
 resource_local_to_scene = true
 lightmap_size_hint = Vector2i(11, 11)
-material = SubResource("StandardMaterial3D_wlfrw")
+material = ExtResource("1_tsvrt")
 uv2_padding = 1.45
 size = Vector2(2, 2)
 

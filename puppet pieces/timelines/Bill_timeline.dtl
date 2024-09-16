@@ -1,0 +1,17 @@
+if {met_bill} == false:
+	Bill: Get off my lawn!
+	[wait time="0.1"]
+	Bill: [lspeed=0.4]...[lspeed]
+	Bill: or where my lawn would be if it wasn't against the law
+	Bill: damn Nem...I guess you know how as Mr. Tode.
+	Bill: The name's Bill
+	set {met_bill} = true
+Bill: Whaddaya want, kid?
+- Are you voting?
+	Bill: Do pigs fly?
+- Why is it against the law to have a lawn?
+	Bill: Because Nem A. Tode is a soul sucking parasite that lives to squash the dreams of man.
+	Bill: [i]Don't tell anyone I said this, but I think he quite literally is a parasite...[/i]
+	Bill: I'm no conspiracy thoerist, but he [i]did[/i] make it illegal to call him one afterall.
+	Bill: Pretty weird "person" if you ask me
+[end_timeline]

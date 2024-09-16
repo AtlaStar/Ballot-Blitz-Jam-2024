@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwm6jobvl4tm5"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_layout_base.gd" id="1_jybkw"]
+[ext_resource type="PackedScene" uid="uid://1wdifkeydp1t" path="res://local_ui_root/scene.tscn" id="2_ckfae"]
+
+[node name="3DTextBase" type="Node"]
+script = ExtResource("1_jybkw")
+
+[node name="LocalUIRoot" parent="." instance=ExtResource("2_ckfae")]

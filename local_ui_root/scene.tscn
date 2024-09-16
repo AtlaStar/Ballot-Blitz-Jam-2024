@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://1wdifkeydp1t"]
+[gd_scene load_steps=15 format=3 uid="uid://1wdifkeydp1t"]
 
 [ext_resource type="Script" path="res://local_ui_root/script.gd" id="1_j27e0"]
-[ext_resource type="Script" path="res://local_ui_root/rich_text_label.gd" id="2_0s32n"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="2_bf1q5"]
 [ext_resource type="Texture2D" uid="uid://cxtwlsvr5c6e5" path="res://crumpled_paper/paper_0022_roughness_1k.jpg" id="3_crx47"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="3_u45ft"]
 [ext_resource type="Texture2D" uid="uid://bbfxks6uqd6ux" path="res://cardboard/paper_0012_color_1k.jpg" id="4_3h40e"]
 [ext_resource type="Texture2D" uid="uid://c7nn8eocvtfq2" path="res://cardboard/paper_0012_height_1k.png" id="5_lebkm"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="6_487y8"]
 [ext_resource type="Texture2D" uid="uid://b8qx7l0j2y62u" path="res://cardboard/paper_0012_normal_opengl_1k.png" id="6_c63f2"]
 [ext_resource type="Texture2D" uid="uid://c7o1dx75ap8v" path="res://cardboard/paper_0012_roughness_1k.jpg" id="7_tx0ki"]
 
@@ -45,31 +47,21 @@ uv1_scale = Vector3(2.08, 0.42, 1.235)
 [sub_resource type="QuadMesh" id="QuadMesh_780um"]
 material = SubResource("StandardMaterial3D_flkb8")
 
-[node name="LocalUIRoot" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.462069)
+[node name="LocalUIRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_j27e0")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 handle_input_locally = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="SubViewport"]
-clip_contents = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 342.0
-offset_bottom = -128.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.54
-bbcode_enabled = true
-text = "[center]Blaasdfasdfwesadfgwergsagfasdfgasdgasgfasdgfasedfwaegwsgfwegsrdgdrh[/center]"
-visible_characters = 0
-visible_ratio = 0.0
-script = ExtResource("2_0s32n")
+render_target_update_mode = 4
 
 [node name="SpotLight3D" type="SpotLight3D" parent="SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 0.988639, 0.150312, 0, -0.150312, 0.988639, 0, 1.97078, 1.904)
@@ -79,12 +71,59 @@ spot_range = 3.59699
 spot_attenuation = 0.25
 spot_angle = 70.83
 
+[node name="Control" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.5
+offset_top = -115.0
+offset_right = 574.5
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="SubViewport/Control" node_paths=PackedStringArray("textbox_root")]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -579.0
+offset_top = -14.0
+offset_right = 582.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]hello world[/center]"
+script = ExtResource("2_bf1q5")
+alignment = 1
+textbox_root = NodePath("..")
+
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="SubViewport/Control/DialogicNode_DialogText"]
+script = ExtResource("3_u45ft")
+
+[node name="DialogicNode_PortraitContainer" type="Control" parent="SubViewport/Control"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_487y8")
+container_ids = PackedStringArray("1")
+
 [node name="TextDisplay" type="MeshInstance3D" parent="."]
-transform = Transform3D(6.855, 0, 0, 0, 6.855, 0, 0, 0, 6.855, 0, 2.49381, 0)
+transform = Transform3D(6.855, 0, 0, 0, 6.855, 0, 0, 0, 6.855, 0, 1.15604, -0.149396)
 mesh = SubResource("QuadMesh_a3ga7")
 surface_material_override/0 = SubResource("StandardMaterial3D_obpsn")
 
 [node name="TextBackdrop" type="MeshInstance3D" parent="TextDisplay"]
-transform = Transform3D(0.913664, 0, 0, 0, 0.145879, 0, 0, 0, 0.145879, 0, -0.217618, -0.0160579)
+transform = Transform3D(0.913664, 0, 0, 0, 0.145879, 0, 0, 0, 0.145879, 0, 0.00629714, -0.0160579)
 mesh = SubResource("QuadMesh_780um")
 skeleton = NodePath("../../SubViewport")

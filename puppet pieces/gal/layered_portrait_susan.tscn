@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cogb283sh2o4j"]
+
+[ext_resource type="Script" path="res://puppet pieces/gal/custom_layered_portrait.gd" id="1_uubi5"]
+[ext_resource type="Texture2D" uid="uid://mouuvum76gj4" path="res://puppet pieces/guy/torso1.png" id="2_1g8s8"]
+
+[node name="LayeredPortrait" type="CanvasGroup"]
+script = ExtResource("1_uubi5")
+
+[node name="Layer1" type="Sprite2D" parent="."]
+
+[node name="Group1" type="Node2D" parent="."]
+
+[node name="Layer1" type="Sprite2D" parent="Group1"]
+
+[node name="Layer2" type="Sprite2D" parent="Group1"]
+
+[node name="Torso1" type="Sprite2D" parent="."]
+position = Vector2(554, 298)
+texture = ExtResource("2_1g8s8")
