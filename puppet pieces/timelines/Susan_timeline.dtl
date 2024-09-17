@@ -13,8 +13,8 @@ if {PlayerStats.TrollEndingFlag} == true:
 	jump TrollEnding/Susan
 if {PlayerStats.GrassEnding} == true:
 	jump GrassTimeline/Susan
-if {PlayerStats.demure_val} <= 0:
-	if {PlayerStats.mindful_val} <= 0:
+if {PlayerStats.demure_val} < 0:
+	if {PlayerStats.mindful_val} < 0:
 		set {SusanVars.susan_pissed} = true
 		do DialogueShit.susan("mad")
 		Susan: How....crass.....

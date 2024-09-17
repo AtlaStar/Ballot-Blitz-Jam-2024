@@ -36,7 +36,6 @@ directories/dtl_directory={
 "Bill_timeline": "res://puppet pieces/timelines/Bill_timeline.dtl",
 "Carol_timeline": "res://Carol_timeline.dtl",
 "Charles_timeline": "res://Charles_timeline.dtl",
-"Charles_timeline (2)": "res://Charles_timeline (2).dtl",
 "EndingTimeline": "res://EndingTimeline.dtl",
 "GrassTimeline": "res://GrassTimeline.dtl",
 "Mayor Nem A Tode_timeline": "res://Mayor Nem A Tode_timeline.dtl",
