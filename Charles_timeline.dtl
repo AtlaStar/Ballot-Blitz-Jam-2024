@@ -1,5 +1,10 @@
 if {DialogueShit.bad_ending_test()}  ==  true:
 	jump YellowEnding/Charles
+if {DialogueShit.ending_test()} == true:
+	if {PlayerStats.entered_epilogue} == false:
+		set {PlayerStats.entered_epilogue} = true
+		Charles: (Entered epilogue)
+	jump EndingTimeline/Charles
 if {PlayerStats.TrollEndingFlag} == true:
 	jump TrollEnding/Charles
 if {PlayerStats.GrassEnding} == true:

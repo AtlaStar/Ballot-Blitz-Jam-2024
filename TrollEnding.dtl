@@ -34,4 +34,9 @@ Carol: Thank's for playing...and inadvertantly causing the mayor's demise...not 
 [end_timeline]
 label Susan
 Susan: The game? Very mindful, very demure...you this playthrough......not so much
+Susan: Would you like to try again?
+- Yes
+	do DialogueShit.restart()
+- No
+	[end_timeline]
 [end_timeline]

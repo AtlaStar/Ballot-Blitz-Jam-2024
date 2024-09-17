@@ -12,14 +12,14 @@ config_version=5
 
 config/name="Ballot Blitz Jam"
 run/main_scene="res://area_3d.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 EventBus="*res://EventBus.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 DialogueShit="*res://DialogueShit.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -36,6 +36,7 @@ directories/dtl_directory={
 "Bill_timeline": "res://puppet pieces/timelines/Bill_timeline.dtl",
 "Carol_timeline": "res://Carol_timeline.dtl",
 "Charles_timeline": "res://Charles_timeline.dtl",
+"Charles_timeline (2)": "res://Charles_timeline (2).dtl",
 "EndingTimeline": "res://EndingTimeline.dtl",
 "GrassTimeline": "res://GrassTimeline.dtl",
 "Mayor Nem A Tode_timeline": "res://Mayor Nem A Tode_timeline.dtl",
@@ -81,6 +82,7 @@ variables={
 "TrollEndingFlag": false,
 "cunning_val": 0,
 "demure_val": 0,
+"entered_epilogue": false,
 "mindful_val": 0,
 "snarky_val": 0,
 "troll_val": 0
@@ -89,6 +91,7 @@ variables={
 "met_sammy": false,
 "sammy_fears_you": false,
 "sammy_trust_level_1": false,
+"sammy_trust_level_2": false,
 "sammy_voting": false
 },
 "SusanVars": {

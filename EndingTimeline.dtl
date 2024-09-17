@@ -1,0 +1,56 @@
+label Bill
+Bill: Well, we did it, we got rid of that bastard Nem
+Bill: Now that he is gone, I can provide you with your stats!
+Bill: Stat Breakdown\:\
+Demure\: {PlayerStats.demure_val}\
+Mindfulness\: {PlayerStats.mindful_val}\
+Snark\: {PlayerStats.snarky_val}\
+Cunning\: {PlayerStats.cunning_val}\
+Trololololo\: {PlayerStats.troll_val}
+[end_timeline]
+label Susan
+Susan: I feel like this ending...wasn't very demure. It was still alright, but it seemed pretty basic no?
+[end_timeline]
+label Carol
+Carol: Now that the Mayor is gone, I can finally start saving some money...but now I am wondering what I'd even do with it, I'm made of paper after all!
+[end_timeline]
+label Sammy
+Sammy: Oh thank you for not bringing me harm...I just home some extradimensional being doesn't decide to restart the game
+- restart
+	do DialogueShit.restart()
+- leave
+	[end_timeline]
+[end_timeline]
+label Charles
+Charles: Did you get any of the references?
+label ~reference_hop
+- I understand them all!
+	[end_timeline]
+- What is the meatman
+	Charles: Go play Psychonauts and it'll make more sense.
+	jump ~reference_hop
+- What's the deal with Susan
+	Charles: Everything is demure and mindful these days...or maybe they aren't?
+	Charles: Idk, I don't follow sarcasm very well sometimes
+	jump ~reference_hop
+- Something about grass?
+	Charles: Fun fact, there was going to be grass but the file imported in a way that overworked the GPU harder than a shady crypto farm
+	jump ~reference_hop
+Charles: It's a metaphore...
+Charles: We're paper puppets, being controlled by invisible threads that only we have the power to sever.
+[wait time="1.0"]
+Charles: Just like you.
+jump ~reference_hop
+[end_timeline]
+label Mayor
+"Mayor Nem A Tode": Drat...
+- You can speak normally?
+	"Mayor Nem A Tode": (looks at you oddly)
+	"Mayor Nem A Tode": [i]*sigh*[/i]
+	"Mayor Nem A Tode": Of course I can, I am an ACTOR
+	"Mayor Nem A Tode": Did you really think that our characters were real?
+	"Mayor Nem A Tode": A real satirization maybe, but not real!
+- What now?
+	"Mayor Nem A Tode": Well you can embrace the fact that you won this time...but I will be back
+	"Mayor Nem A Tode": In the literal way, not the figurative way, since eventually you will have to close this game and everything will restart to as it was before
+[end_timeline]

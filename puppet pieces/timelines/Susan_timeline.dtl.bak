@@ -4,11 +4,6 @@ if {DialogueShit.bad_ending_test()}  ==  true::
 		set {PlayerStats.entered_epilogue} = true
 		Susan: (entered epilogue)
 	jump YellowEnding/Susan
-if {DialogueShit.ending_test()} == true:
-	if {PlayerStats.entered_epilogue} == false:
-		set {PlayerStats.entered_epilogue} = true
-		Susan: (entered epilogue)
-	jump EndingTimeline/Susan
 if {PlayerStats.TrollEndingFlag} == true:
 	jump TrollEnding/Susan
 if {PlayerStats.GrassEnding} == true:
@@ -66,13 +61,11 @@ elif {PlayerStats.demure_val} > 0.0 && {PlayerStats.mindful_val} > 0.0:
 	jump ~success
 elif {SusanVars.susan_stat_changed} == true:
 	Susan: Hmmm...maybe we can talk about things later...I am not feeling like talking at the moment...
-	do DialogueShit.susan("mad")
 else:
 [end_timeline]
 label ~success
 Susan: Maybe I should listen to what you have to say...I guess if Mr. Tode is voted out, I won't have to worry about how I can buy my monthly allowance of liverwurst.
 set {SusanVars.susan_voting} = true
-do DialogueShit.susan("happy")
 label ~Voting
 Susan: Thank you so much for making it to where I can vote!
 [end_timeline]

@@ -3,11 +3,6 @@ if {DialogueShit.bad_ending_test()}  ==  true::
 		set {PlayerStats.entered_epilogue} = true
 		Sammy: (entered epilogue)
 	jump YellowEnding/Sammy
-if {DialogueShit.ending_test()} == true:
-	if {PlayerStats.entered_epilogue} == false:
-		set {PlayerStats.entered_epilogue} = true
-		Sammy: (entered epilogue)
-	jump EndingTimeline/Sammy
 if {PlayerStats.TrollEndingFlag} == true:
 	jump TrollEnding/Sammy
 if {PlayerStats.GrassEnding} == true:
@@ -58,46 +53,11 @@ Sammy: We think our world is real, but it only exists for the entertainment of e
 		set {SammyVars.sammy_fears_you} = true
 		jump ~sammy_shit_himself
 label ~post_intro
-if {SammyVars.sammy_fears_you} == true:
-	jump ~sammy_shit_himself
-if {SammyVars.sammy_trust_level_2} == true:
-	jump ~sammy_trusts_you
 Sammy: ...yes...
-- I work for the Mayor
+- So about being on your side? yeah, I lied
 	Sammy: I KNEW IT
 	Sammy: (Sammy shrinks their posture as if trying to hide from you)
 	jump ~sammy_shit_himself
-- I am an extradimensional being | [if {SammyVars.sammy_trust_level_1} == true]
-	set {PlayerStats.cunning_val} += 10
-	Sammy: AAAHHHHHH
-	[wait time="1.0"]
-	Sammy: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH
-	Sammy: (this goes on for quite some time)
-	set {SammyVars.sammy_fears_you} = true
-	Sammy: what do you want from me?
-	- For you to vote!
-		Sammy: ...ok
-		Sammy: (he starts breathing heavily...you don't know if you've convinced him or not...)
-		set {SammyVars.sammy_voting} = true
-		do DialogueShit.sammy("happy")
-	- All your base
-		Sammy: NOT MY BASE!
-		- yes, your base
-			Sammy: NOOOOOOOOoooooo......
-			Sammy: I need my base...
-			Sammy: (The poor guy hunches over into the fetal position)
-			Sammy: (You are kind of a jerk)
-		- no...your BASE
-			Sammy: You mean me, as part of a voter base of those laughed at and derided for likely real and unaddressed mental health issues including forms of trauma...
-			Sammy: Who is taken advantage of by fear and divisive language created with the very purpose of creating an other for those like me to point at for their woes, [i]and[/i] for us to be an other that you can put all blame onto, creating a tangled effigy where our barbs do nothing put poke ourselves...
-			[wait time="1.5"]
-			Sammy: That kind of base?
-			- Sure?
-				set {SammyVars.sammy_voting} = true
-				set {SammyVars.sammy_trust_level_2} = true
-				set {SammyVars.sammy_fears_you} = false
-				do DialogueShit.sammy("happy")
-				jump ~sammy_trusts_you
 - Nothing quite yet
 	Sammy: ...don't be seen leaving
 [end_timeline]
@@ -105,5 +65,3 @@ label ~sammy_shit_himself
 Sammy: (Sammy is clearly having a panic attack)
 do DialogueShit.sammy("mad")
 [end_timeline]
-label ~sammy_trusts_you
-Sammy: EXTRADIMENSIONAL BEING FOR MAYOR 2024!!!

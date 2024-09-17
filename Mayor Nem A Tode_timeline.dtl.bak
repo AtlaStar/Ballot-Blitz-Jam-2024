@@ -3,11 +3,6 @@ if {DialogueShit.bad_ending_test()}  ==  true:
 		set {PlayerStats.entered_epilogue} = true
 		"Mayor Nem A Tode": (entered epilogue)
 	jump YellowEnding/Mayor
-if {DialogueShit.ending_test()} == true:
-	if {PlayerStats.entered_epilogue} == false:
-		set {PlayerStats.entered_epilogue} = true
-		"Mayor Nem A Tode": (entered epilogue)
-	jump EndingTimeline/Mayor
 if {PlayerStats.TrollEndingFlag} == true:
 	[end_timeline]
 if {PlayerStats.GrassEnding} == true:

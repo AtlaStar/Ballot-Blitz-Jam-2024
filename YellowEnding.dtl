@@ -9,7 +9,8 @@ Bill: [color=yellow]Stat Breakdown\:\
 [color=yellow]Snark\: {PlayerStats.snarky_val}\
 [color=yellow]Cunning\: {PlayerStats.cunning_val}\
 [color=yellow]Trololololo\: {PlayerStats.troll_val}
-Bill: Why are they yellow?
+Bill: Why are they yellow, you ask?
+[wait time="1.0"]
 Bill: ...best not to ask
 [end_timeline]
 label Carol
@@ -19,20 +20,34 @@ Carol: At least not until you restart the game
 label Sammy
 Sammy: What kind of person leads someone on, just to pull the rug out...and for what, to amuse the higher dimensional beings who stare at us for amusement...do you really BOW TO THESE PEOPLE
 Sammy: CREDITS\:
-Sammy: Mike Jones\:\\
-	SFX, Music, Sound design
-Sammy: McKenzie\:\\
-	3d Modelling, Storyboarding, Game Design
-Sammy: Derrick Melton\:\\
-	Programming, Scene Developer, Storyboarding, Game Design, Writing
-Sammy: Ed\:\\
-	Sprite Art, Storyboarding
-Sammy: Eric\:\\
-	Character Design, Sprite Art
+Sammy: Mike Jones\:\
+SFX, Music, Sound design
+Sammy: McKenzie\:\
+3d Modelling, Storyboarding, Game Design
+Sammy: Derrick Melton\:\
+Programming, Scene Developer, Storyboarding, Game Design, Writing
+Sammy: Ed\:\
+Sprite Art, Storyboarding
+Sammy: Eric\:\
+Character Design, Sprite Art
 Sammy: The maintainers of Dialogic
 Sammy: Thanks for playing!
 [end_timeline]
 label Charles
+[wait time="0.5"]
+Charles: Oh?
+Charles: I guess it is my turn to do the thing
+[wait time="1.0"]
+Charles: C'mon already, just pick already, we don't have all day, some of us have meat to smoke
+- Yes?
+	do DialogueShit.restart()
+	[end_timeline]
+- No?
+	Charles: Then don't bug me until it is time to restart the game!
 [end_timeline]
 label Mayor
+"Mayor Nem A Tode": You screwed up real bad didn't ya, ha
+[wait time="0.6"]
+"Mayor Nem A Tode": What do you mean you "did it intentionally"
+"Mayor Nem A Tode": That sounds almost as narcassistic as I am, and I am a parasitic worm!
 [end_timeline]

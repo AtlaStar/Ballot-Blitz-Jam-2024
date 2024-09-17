@@ -7,7 +7,7 @@ if {DialogueShit.ending_test()} == true:
 	if {PlayerStats.entered_epilogue} == false:
 		set {PlayerStats.entered_epilogue} = true
 		Bill: (entered epilogue)
-	jump EndingTimeline/Bill
+jump EndingTimeline/Bill
 if {PlayerStats.TrollEndingFlag} == true:
 	jump TrollEnding/Bill
 if {PlayerStats.GrassEnding} == true:
@@ -53,7 +53,6 @@ label ~question root
 			set {PlayerStats.cunning_val} += 1
 			set {BillVars.bill_running} = true
 			set {BillVars.bill_voting} = true
-			do DialogueShit.bill("happy")
 		- ...it was a joke
 			set {PlayerStats.snarky_val} += 1
 			set {BillVars.bill_pissed} = true
@@ -65,7 +64,6 @@ label ~question root
 		Bill: [mood=Default]I bet he and I could get people to vote for ONE of us!
 		set {PlayerStats.snarky_val} += 1
 		set {BillVars.bill_voting} = true
-		do DialogueShit.bill("happy")
 - Why is it against the law to have a lawn?
 	Bill: [mood=Default]Because Nem A. Tode is a soul sucking parasite that lives to squash the dreams of man.
 	Bill: [mood=Default][i]Don't tell anyone I said this, but I think he quite literally is a parasite...[/i]
