@@ -60,6 +60,7 @@ elif {PlayerStats.demure_val}  <  2 && {SusanVars.susan_stat_changed} == false:
 			[wait time="1.0"]
 			Susan: FOR REAL!
 			Susan: That is wonderful news...now if only it were easier to vote at the HOA meetings, I really wish Mr. Tode would let me paint my house garnet...or if feeling crazy, a merlot!
+			do DialogueShit.susan("happy")
 			set {SusanVars.susan_voting} = true
 			jump ~Voting
 elif {PlayerStats.demure_val} > 0.0 && {PlayerStats.mindful_val} > 0.0:

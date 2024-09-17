@@ -12,6 +12,8 @@ if {PlayerStats.TrollEndingFlag} == true:
 	jump TrollEnding/Sammy
 if {PlayerStats.GrassEnding} == true:
 	jump GrassTimeline/Sammy
+if {SammyVars.sammy_trust_level_2} == true:
+	jump ~sammy_trusts_you
 if {SammyVars.met_sammy} == true:
 	jump ~post_intro
 set {SammyVars.met_sammy} = true
@@ -103,7 +105,9 @@ Sammy: ...yes...
 [end_timeline]
 label ~sammy_shit_himself
 Sammy: (Sammy is clearly having a panic attack)
+set {SammyVars.sammy_fears_you} = true
 do DialogueShit.sammy("mad")
 [end_timeline]
 label ~sammy_trusts_you
 Sammy: EXTRADIMENSIONAL BEING FOR MAYOR 2024!!!
+[end_timeline]

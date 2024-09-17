@@ -58,7 +58,7 @@ Charles: Anyway, that's about that.
 label ~post_info
 if {CharlesVars.talk_count} >= 3:
 	set {CharlesVars.charles_pissed} = true
-	do DialogueShit.charles()
+	do DialogueShit.charles("mad")
 	jump ~angry_charles
 Charles: Got a question?
 - Is there anyway to convince you to vote
@@ -74,6 +74,7 @@ Charles: Got a question?
 		Charles: (Day after announcements)
 		set {PlayerStats.GrassEnding} = true
 		set {CharlesVars.charles_voting} = true
+		do DialogueShit.charles("happy")
 		jump ~voting_charles
 	- I'll be back once a miracle has happened
 	set {CharlesVars.talk_count} += 1
