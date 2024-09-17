@@ -15,35 +15,37 @@ run/main_scene="res://area_3d.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://audio/default_bus_layout.tres"
+
 [autoload]
 
-EventBus="*res://EventBus.gd"
-DialogueShit="*res://DialogueShit.gd"
+EventBus="*res://scripts/EventBus.gd"
+DialogueShit="*res://scripts/DialogueShit.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
-"Bill": "res://puppet pieces/gal/Bill.dch",
-"Carol": "res://Carol.dch",
-"Charles": "res://Charles.dch",
-"Mayor Nem A Tode": "res://Mayor Nem A Tode.dch",
-"Player": "res://Player.dch",
-"Sammy": "res://Sammy.dch",
-"Susan": "res://Susan.dch"
+"Bill": "res://Actors/Bill/Bill.dch",
+"Carol": "res://Actors/Carol/Carol.dch",
+"Charles": "res://Actors/Charles/Charles.dch",
+"Mayor Nem A Tode": "res://Actors/Mayor/Mayor Nem A Tode.dch",
+"Sammy": "res://Actors/Sammy/Sammy.dch",
+"Susan": "res://Actors/Susan/Susan.dch"
 }
 directories/dtl_directory={
-"Bill_timeline": "res://puppet pieces/timelines/Bill_timeline.dtl",
-"Carol_timeline": "res://Carol_timeline.dtl",
-"Charles_timeline": "res://Charles_timeline.dtl",
-"EndingTimeline": "res://EndingTimeline.dtl",
-"GrassTimeline": "res://GrassTimeline.dtl",
-"Mayor Nem A Tode_timeline": "res://Mayor Nem A Tode_timeline.dtl",
-"Sammy_timeline": "res://Sammy_timeline.dtl",
-"Susan_timeline": "res://puppet pieces/timelines/Susan_timeline.dtl",
-"Timeline Root": "res://Timeline Root.dtl",
-"TrollEnding": "res://TrollEnding.dtl",
-"YellowEnding": "res://YellowEnding.dtl"
+"Bill_timeline": "res://Actors/Bill/Bill_timeline.dtl",
+"Carol_timeline": "res://Actors/Carol/Carol_timeline.dtl",
+"Charles_timeline": "res://Actors/Charles/Charles_timeline.dtl",
+"EndingTimeline": "res://Ungrouped Timelines/EndingTimeline.dtl",
+"GrassTimeline": "res://Ungrouped Timelines/GrassTimeline.dtl",
+"Mayor Nem A Tode_timeline": "res://Actors/Mayor/Mayor Nem A Tode_timeline.dtl",
+"Sammy_timeline": "res://Actors/Sammy/Sammy_timeline.dtl",
+"Susan_timeline": "res://Actors/Susan/Susan_timeline.dtl",
+"TrollEnding": "res://Ungrouped Timelines/TrollEnding.dtl",
+"YellowEnding": "res://Ungrouped Timelines/YellowEnding.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://speech_bubble_test.tres"]

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cgbw066l4u0gr"]
+
+[ext_resource type="Texture2D" uid="uid://duvrr06myipgi" path="res://Graphics/Textures/crumpled_paper/paper_0022_normal_opengl_1k.png" id="1_f07ux"]
+[ext_resource type="Texture2D" uid="uid://cxtwlsvr5c6e5" path="res://Graphics/Textures/crumpled_paper/paper_0022_roughness_1k.jpg" id="2_gnk8u"]
+
+[resource]
+albedo_color = Color(0.21, 0.21, 0.21, 1)
+roughness_texture = ExtResource("2_gnk8u")
+normal_enabled = true
+normal_scale = 0.78
+normal_texture = ExtResource("1_f07ux")
+uv1_scale = Vector3(3.97, 6.275, 1)
