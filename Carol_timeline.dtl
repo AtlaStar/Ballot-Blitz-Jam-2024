@@ -1,0 +1,57 @@
+if {CarolVars.left_for_day} == true:
+	[end_timeline]
+if {CarolVars.met_carol} == false:
+	Carol: Oh, a new face? The name is Carol.
+	Carol: Also sorry in advanced, we're currently closed.
+	- Why is that? | [if {CarolVars.told_story} == false]
+		Carol: The mayor decided to replace all the previous wired infrastructure around here, and hired some buddies of his from out of town.
+		Carol: Needless to say, they ripped up the old underground wiring, then sold it for scrap because the mayor didn't pay them...some friend huh.
+		Carol: So now my business has to run on cash only...and the till has no change.
+		set {mindful_val} += 1
+		set {CarolVars.told_story} = true
+	- I was here for a different reason
+		Carol: Oh?
+Carol: What can I do for you?
+- Are you voting this election?
+	if {CarolVars.told_story} == true:
+		Carol: No, I don't even know who I would want to vote for
+		Carol: The mayor definitely does [i]NOT[/i] have my vote after basically killing my business
+		Carol: Besides his dumb choices making it harder for me to serve the community, I also have been feeling a major hit to the wallet ever since business taxes were changed to "Whatever you and your business don't spend goes directly into the town slush fund"
+		Carol: Then after that he created an HOA and made a rule that his house had to be the largest, and decided every home needed to be painted the same 4 "shades" of red.
+		Carol: He also made me remodel my restaurant to [i]look[/i] like a house under threat of being shut down and having the property..."reposessed"...the guy has some loose screws...
+		Carol: phew...that was a rant, any other questions?
+		label ~Rant End
+		- (Ask about taxes)
+			Carol: Basically the reason why I won't vote; no one has even proposed changing that law, and I'd rather deal with the evil you do know, than the one you don't
+			set {mindful_val} += 1
+			jump ~Rant End
+		- (Ask about the mayor's house)
+			Carol: Pretty sure all my profits went into remodeling his home...
+			Carol: He is also weirdly adamant that his house needs to be the "brightest," although as you can see our homes are literally the same color. Guy is a nut case
+			set {mindful_val} += 1
+			jump ~Rant End
+		- (Ask about threat)
+			Carol: He is just insane
+			Carol: Literally his first act in office was to make us all remodel our homes to look exactly the same, under threat of eminent domain...pretty sure that isn't how it works, but none of us were brave enough to stand up to him.
+			jump ~Rant End
+			set {mindful_val} += 1
+		- (Finished)
+			Carol: Are you sure? I am going to head to the next town over's bank since ours became a Bank of Tode subsidiary, LLC., NFT.
+			Carol: That's the banks new  name, I don't think it is any of those things
+			- Yes
+				jump ~Moment Of Truth
+			- No
+				jump ~Rant End
+	else:
+		Carol: No...and I don't feel comfortable telling you why when we don't know each other that well...
+		[end_timeline]
+label ~Moment Of Truth
+Carol: So anyway, that is my story...last chance to say anything before I leave
+- I think you should vote!
+	Carol: That's a nice thought, I'll think about it.
+- I think you should take the day off | [if {mindful_val} >= 3]
+	Carol: Ya know...you are right...I should.
+	Carol: Maybe a break will give me time to see if there is [i]anyone[/i] better to vote for than Mayor Tode.
+	Carol: Also, I should make it a holiday for poor Susan too...any extra money goes into the mayors pockets so I could even pay her.
+	set {carol_voting} = true
+set {CarolVars.left_for_day} = true

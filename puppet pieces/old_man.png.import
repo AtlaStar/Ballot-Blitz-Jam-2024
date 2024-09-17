@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lmng16bxe3ot"
-path.s3tc="res://.godot/imported/torso3.png-87d57bcfc3afc9c94cc10c04a931cca6.s3tc.ctex"
+uid="uid://bgrfom2mfkpu1"
+path.s3tc="res://.godot/imported/old_man.png-d5b3ba91be409b83f6ec385d0c3667c9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://puppet pieces/torso3.png"
-dest_files=["res://.godot/imported/torso3.png-87d57bcfc3afc9c94cc10c04a931cca6.s3tc.ctex"]
+source_file="res://puppet pieces/old_man.png"
+dest_files=["res://.godot/imported/old_man.png-d5b3ba91be409b83f6ec385d0c3667c9.s3tc.ctex"]
 
 [params]
 

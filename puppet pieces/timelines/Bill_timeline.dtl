@@ -1,14 +1,44 @@
-if {met_bill} == false:
+if {troll_val} >= 10:
+	Bill: I heard about what you did to the Mayor...
+	Bill: Gotta say, I approve, "guy" could use getting taken down a few pegs
+	jump ~intro skip
+if {BillVars.bill_pissed} == true:
+	Bill: ...
+	[end_timeline]
+if {BillVars.met_bill} == false:
 	Bill: Get off my lawn!
 	[wait time="0.1"]
 	Bill: [lspeed=0.4]...[lspeed]
 	Bill: or where my lawn would be if it wasn't against the law
-	Bill: damn Nem...I guess you know how as Mr. Tode.
+	Bill: damn Nem...I guess you might know him instead as Mr. Tode.
+	label ~intro skip
 	Bill: The name's Bill
-	set {met_bill} = true
+	set {BillVars.met_bill} = true
 Bill: Whaddaya want, kid?
-- Are you voting?
+- Are you voting? | [if {BillVars.asked_to_vote} == false] [else="hide"]
 	Bill: Do pigs fly?
+	Bill: I just don't see the point; Nem always wins the damn thing. I just feel like I as a lawn lover don't have a voice...clearly [i]someone[/i]in this town likes him enough for him to win...and I don't want to ruffle any feathers...
+- So what would it take for you to go and vote? | [if {BillVars.asked_to_vote} == true]
+	Bill: Pigs flying...
+	Bill: Alternatively, if you can give me a good suggestion as to who I should vote for that has the same values I have, and I feel like they have a shot, I [i]might decide to vote[/i]
+	- Carol
+		Bill: Eh, Carol is a nice lady, but she is too busy with her business to also run the town...
+	- Susan
+		Bill: My wife is unironically too demure, she'd be too worried about making the kind of changes this town really needs
+	- Yourself | [if {cunning_val} > 1]
+		Bill: hmmmm....I could do that couldn't I...
+		Bill: ya know, I've heard you are pretty good at strategizing, maybe if you were willing to help me run a campaign?
+		- Sure thing
+			Bill: Great, now go out there and get people to vote for me!
+			set {cunning_val} += 1
+		- ...it was a joke
+			set {snarky_val} += 1
+			Bill: ...
+			Bill: Not a very funny one
+	- Someone in Lawn enforcement...
+		Bill: HA! That's a good one...ya know, thinking about it more, I do think I recall Charles having a Ride mower before his injury.
+		Bill: I bet he and I could get people to vote for ONE of us!
+		set {snarky_val} += 1
 - Why is it against the law to have a lawn?
 	Bill: Because Nem A. Tode is a soul sucking parasite that lives to squash the dreams of man.
 	Bill: [i]Don't tell anyone I said this, but I think he quite literally is a parasite...[/i]

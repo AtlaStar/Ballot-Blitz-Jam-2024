@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lmng16bxe3ot"
-path.s3tc="res://.godot/imported/torso3.png-87d57bcfc3afc9c94cc10c04a931cca6.s3tc.ctex"
+uid="uid://c0o37tlivyq0t"
+path.s3tc="res://.godot/imported/Mayor.png-9df6ab7bc55d064d60339c127163f582.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://puppet pieces/torso3.png"
-dest_files=["res://.godot/imported/torso3.png-87d57bcfc3afc9c94cc10c04a931cca6.s3tc.ctex"]
+source_file="res://puppet pieces/Mayor.png"
+dest_files=["res://.godot/imported/Mayor.png-9df6ab7bc55d064d60339c127163f582.s3tc.ctex"]
 
 [params]
 

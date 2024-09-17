@@ -17,7 +17,7 @@ size = Vector3(1.02289, 1.99588, 0.323822)
 
 [sub_resource type="SphereMesh" id="SphereMesh_xljvo"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_inq3b"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ew3sb"]
 load_path = "res://.godot/imported/torso1.png-29acaefc7887c4d65aa4193b88d96a31.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kjkj"]
@@ -27,7 +27,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 cull_mode = 2
 diffuse_mode = 3
-albedo_texture = SubResource("CompressedTexture2D_inq3b")
+albedo_texture = SubResource("CompressedTexture2D_ew3sb")
 roughness_texture = ExtResource("4_j0kwy")
 emission = Color(0.0313726, 0.329412, 0.0627451, 1)
 emission_energy_multiplier = 0.0

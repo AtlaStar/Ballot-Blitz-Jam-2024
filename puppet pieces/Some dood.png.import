@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3qjh641hsa2"
-path="res://.godot/imported/Butcher Man 2.png-597755486dfe81d7aadb0c1ae9a4c934.ctex"
+uid="uid://d25nlanf33ore"
+path="res://.godot/imported/Some dood.png-f817c97aeaec83b8ca83adba7c1789f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Butcher Man 2.png"
-dest_files=["res://.godot/imported/Butcher Man 2.png-597755486dfe81d7aadb0c1ae9a4c934.ctex"]
+source_file="res://puppet pieces/Some dood.png"
+dest_files=["res://.godot/imported/Some dood.png-f817c97aeaec83b8ca83adba7c1789f0.ctex"]
 
 [params]
 

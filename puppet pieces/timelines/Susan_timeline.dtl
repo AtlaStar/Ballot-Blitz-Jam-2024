@@ -21,7 +21,14 @@ elif {demure_val}  <  2 && {susan_stat_changed} == false:
 			Susan: HOW DEMUUUURE
 			set {susan_stat_changed} = true
 			set {demure_val} += 1
-			Susan: If I only also knew you were mindful....ah well, anyway
+			Susan: If I only also knew you were mindful....
+			- Nope, sorry
+				Susan: ah well, anyway
+			- ...well actually (mindful) | [if {mindful_val} >= 1] [else="hide"]
+				Susan: A RARITY
+				Susan: Very demure
+				Susan: Very mindful
+				Susan: so, I wish to be humble, but alas I can tell you more about myself
 		Susan: I work down at Carol's Bakery...easy place to miss, it is the house that is scarlet instead of the normal crimson color that the rest of us use for our homes.
 		Susan: Unfortunately, money is tight with the cost of living, and without something like Universal Basic Income, I just won't be able to take time off to go and vote out Mr. Tode.
 		- Oh no...
@@ -34,11 +41,14 @@ elif {demure_val}  <  2 && {susan_stat_changed} == false:
 			Susan: FOR REAL!
 			Susan: That is wonderful news...now if only it were easier to vote at the HOA meetings, I really wish Mr. Tode would let me paint my house garnet...or if feeling crazy, a merlot!
 			set {susan_voting} = true
-elif {susan_stat_changed} == true :
+			jump ~Voting
+elif {susan_stat_changed} == true:
 	Susan: Hmmm...maybe we can talk about things later...I am not feeling like talking at the moment...
 else:
+if {demure_val} > 0.0 && {mindful_val} > 0.0:
 	Susan: Maybe I should listen to what you have to say...I guess if Mr. Tode is voted out, I won't have to worry about how I can buy my monthly allowance of liverwurst.
 	set {susan_voting} = true
 [end_timeline]
 label ~Voting
 Susan: Thank you so much for making it to where I can vote!
+[end_timeline]

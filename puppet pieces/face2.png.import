@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0o37tlivyq0t"
-path.s3tc="res://.godot/imported/Mayor.png-815f6cd624d804dfad233409feb21068.s3tc.ctex"
+uid="uid://bshryt25e7sxl"
+path.s3tc="res://.godot/imported/face2.png-29cb86d12e73692c060196201140a8af.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Mayor.png"
-dest_files=["res://.godot/imported/Mayor.png-815f6cd624d804dfad233409feb21068.s3tc.ctex"]
+source_file="res://puppet pieces/face2.png"
+dest_files=["res://.godot/imported/face2.png-29cb86d12e73692c060196201140a8af.s3tc.ctex"]
 
 [params]
 

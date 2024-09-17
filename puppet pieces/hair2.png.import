@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgrfom2mfkpu1"
-path.s3tc="res://.godot/imported/old_man.png-d6d70830e68adc40e4d4e8b4596e628b.s3tc.ctex"
+uid="uid://b6pfgkh8ys212"
+path.s3tc="res://.godot/imported/hair2.png-4d88575a13a39e6e7b0891b5d15a58cc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://old_man.png"
-dest_files=["res://.godot/imported/old_man.png-d6d70830e68adc40e4d4e8b4596e628b.s3tc.ctex"]
+source_file="res://puppet pieces/hair2.png"
+dest_files=["res://.godot/imported/hair2.png-4d88575a13a39e6e7b0891b5d15a58cc.s3tc.ctex"]
 
 [params]
 

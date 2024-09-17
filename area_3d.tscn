@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://c10jljqow0sg"]
+[gd_scene load_steps=112 format=3 uid="uid://c10jljqow0sg"]
 
 [ext_resource type="Texture2D" uid="uid://dh3jhgx2ifr5o" path="res://weird sky.png" id="1_1qkw2"]
 [ext_resource type="PackedScene" uid="uid://3k6svtn0hdeb" path="res://NPC Generic.tscn" id="1_2vkv0"]
@@ -14,14 +14,16 @@
 [ext_resource type="Texture2D" uid="uid://drte438nsp6fu" path="res://puppet pieces/guy/mouth1.png" id="13_6mdq2"]
 [ext_resource type="Texture2D" uid="uid://bub2cq78ctws1" path="res://puppet pieces/guy/hair1.png" id="14_b32a1"]
 [ext_resource type="Texture2D" uid="uid://2eyn4l2ujvad" path="res://puppet pieces/gal/eyes2.png" id="14_c6meh"]
-[ext_resource type="Texture2D" uid="uid://ftslopkepoid" path="res://puppet pieces/mouth3.png" id="15_stojr"]
-[ext_resource type="Texture2D" uid="uid://d1paukr85q2ln" path="res://puppet pieces/torso3.png" id="16_qcu58"]
+[ext_resource type="Texture2D" uid="uid://dv8di2fw0ls3w" path="res://puppet pieces/mouth3.png" id="15_stojr"]
+[ext_resource type="Texture2D" uid="uid://lmng16bxe3ot" path="res://puppet pieces/torso3.png" id="16_qcu58"]
 [ext_resource type="PackedScene" uid="uid://upmgrxd14ocm" path="res://houseno_ground.tscn" id="20_fjc2g"]
 [ext_resource type="Texture2D" uid="uid://1c7norrn6ll8" path="res://wood/wood_0054_color_1k.jpg" id="21_26urg"]
 [ext_resource type="PackedScene" uid="uid://eglcremirc5l" path="res://the worms house.tscn" id="21_byjmg"]
-[ext_resource type="Texture2D" uid="uid://c0o37tlivyq0t" path="res://Mayor.png" id="22_dl2j4"]
+[ext_resource type="Texture2D" uid="uid://c0o37tlivyq0t" path="res://puppet pieces/Mayor.png" id="22_dl2j4"]
 [ext_resource type="Texture2D" uid="uid://b8qx7l0j2y62u" path="res://cardboard/paper_0012_normal_opengl_1k.png" id="22_xgfaf"]
 [ext_resource type="Texture2D" uid="uid://c6otdnlcxykuk" path="res://wood/wood_0054_roughness_1k.jpg" id="23_boexa"]
+[ext_resource type="Texture2D" uid="uid://bshryt25e7sxl" path="res://puppet pieces/face2.png" id="23_fftsj"]
+[ext_resource type="Texture2D" uid="uid://b6pfgkh8ys212" path="res://puppet pieces/hair2.png" id="24_x0t7s"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ftr26"]
 panorama = ExtResource("1_1qkw2")
@@ -640,6 +642,208 @@ ao_texture = ExtResource("5_6a0rq")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_areyw")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32hjs"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(1, 0.59, 0.59, 1)
+albedo_texture = ExtResource("16_qcu58")
+roughness_texture = ExtResource("8_p462h")
+emission = Color(0.0313726, 0.329412, 0.0627451, 1)
+emission_energy_multiplier = 0.0
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("7_krjn0")
+rim = 0.92
+rim_tint = 0.89
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+heightmap_enabled = true
+heightmap_scale = 2.07
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("6_a08rn")
+uv1_triplanar_sharpness = 2.63902
+texture_filter = 2
+grow_amount = 0.2
+point_size = 1.9
+
+[sub_resource type="QuadMesh" id="QuadMesh_1rp3j"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(11, 11)
+material = SubResource("StandardMaterial3D_32hjs")
+uv2_padding = 1.45
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i70gf"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.86, 0.80582, 0.7396, 1)
+albedo_texture = ExtResource("23_fftsj")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_m01pr"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_i70gf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5jqj"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.86, 0.80582, 0.7396, 1)
+albedo_texture = ExtResource("10_upnoy")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_6b7sa"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_h5jqj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkneb"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.86, 0.80582, 0.7396, 1)
+albedo_texture = ExtResource("10_upnoy")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_x5k46"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_fkneb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8d7fl"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+albedo_texture = ExtResource("11_qvfau")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_b6d6f"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_8d7fl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_the77"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.86, 0.80582, 0.7396, 1)
+albedo_texture = ExtResource("12_c8lmw")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_2to8j"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_the77")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ui1hm"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.86, 0.80582, 0.7396, 1)
+albedo_texture = ExtResource("12_c8lmw")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_rdpkt"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ui1hm")
+flip_faces = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awq2u"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+albedo_texture = ExtResource("13_6mdq2")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_csysk"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(7, 7)
+material = SubResource("StandardMaterial3D_awq2u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87qme"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.72, 0.36576, 0.2016, 1)
+albedo_texture = ExtResource("24_x0t7s")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_d2q1o"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_87qme")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fnilh"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.72, 0.36576, 0.2016, 1)
+albedo_texture = ExtResource("24_x0t7s")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_l0njh"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_fnilh")
+
 [node name="Stage" type="StaticBody3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -723,92 +927,92 @@ transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, -1.90735e-06, 0)
 mesh = SubResource("PlaneMesh_wfksu")
 surface_material_override/0 = SubResource("StandardMaterial3D_0gpbt")
 
-[node name="NPC" parent="." instance=ExtResource("1_2vkv0")]
+[node name="Susan" parent="." instance=ExtResource("1_2vkv0")]
 transform = Transform3D(0.289683, 0, 0.957123, 0, 1, 0, -0.957123, 0, 0.289683, -3.35315, 1.0019, -0.374548)
 
-[node name="BodyMesh3D" parent="NPC" index="2"]
+[node name="BodyMesh3D" parent="Susan" index="2"]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
 mesh = SubResource("QuadMesh_tv8yn")
 
-[node name="HeadMesh3D" parent="NPC/BodyMesh3D" index="0"]
+[node name="HeadMesh3D" parent="Susan/BodyMesh3D" index="0"]
 mesh = SubResource("QuadMesh_h8e0o")
 
-[node name="LeftLegMesh3D" parent="NPC/BodyMesh3D" index="1"]
+[node name="LeftLegMesh3D" parent="Susan/BodyMesh3D" index="1"]
 mesh = SubResource("QuadMesh_qr7ye")
 
-[node name="RightLegMesh3D" parent="NPC/BodyMesh3D" index="2"]
+[node name="RightLegMesh3D" parent="Susan/BodyMesh3D" index="2"]
 mesh = SubResource("QuadMesh_r3pea")
 
-[node name="Eyes" parent="NPC/BodyMesh3D" index="3"]
+[node name="Eyes" parent="Susan/BodyMesh3D" index="3"]
 mesh = SubResource("QuadMesh_xfwlo")
 
-[node name="LeftArm" parent="NPC/BodyMesh3D" index="4"]
+[node name="LeftArm" parent="Susan/BodyMesh3D" index="4"]
 mesh = SubResource("QuadMesh_frrse")
 
-[node name="RightArm" parent="NPC/BodyMesh3D" index="5"]
+[node name="RightArm" parent="Susan/BodyMesh3D" index="5"]
 mesh = SubResource("QuadMesh_hm5qo")
 
-[node name="Mouth" parent="NPC/BodyMesh3D" index="6"]
+[node name="Mouth" parent="Susan/BodyMesh3D" index="6"]
 mesh = SubResource("QuadMesh_noehn")
 
-[node name="Hair" parent="NPC/BodyMesh3D" index="7"]
+[node name="Hair" parent="Susan/BodyMesh3D" index="7"]
 mesh = SubResource("QuadMesh_rmica")
 
-[node name="Hair2" parent="NPC/BodyMesh3D" index="8"]
+[node name="Hair2" parent="Susan/BodyMesh3D" index="8"]
 mesh = SubResource("QuadMesh_ta12h")
 
-[node name="Area3D" parent="NPC/BodyMesh3D" index="9"]
+[node name="Area3D" parent="Susan/BodyMesh3D" index="9"]
 transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, -0.538078, 0, 0.478013)
 npc_name = "Susan"
 
-[node name="TextBubbleLocation" parent="NPC/BodyMesh3D/Area3D" index="1"]
+[node name="TextBubbleLocation" parent="Susan/BodyMesh3D/Area3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02977, 0.200632, -0.3147)
 
-[node name="NPC2" parent="." instance=ExtResource("1_2vkv0")]
+[node name="Bill" parent="." instance=ExtResource("1_2vkv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32531, 0.878666, -0.351628)
 
-[node name="BodyMesh3D" parent="NPC2" index="2"]
+[node name="BodyMesh3D" parent="Bill" index="2"]
 transform = Transform3D(1.065, 0, 0, 0, 0.97, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("QuadMesh_j1s2k")
 
-[node name="HeadMesh3D" parent="NPC2/BodyMesh3D" index="0"]
+[node name="HeadMesh3D" parent="Bill/BodyMesh3D" index="0"]
 transform = Transform3D(2.085, 0, 0, 0, 2.085, 0, 0, 0, 2.085, -0.0306513, 0.0575744, 0.0586151)
 mesh = SubResource("QuadMesh_llw10")
 
-[node name="LeftLegMesh3D" parent="NPC2/BodyMesh3D" index="1"]
+[node name="LeftLegMesh3D" parent="Bill/BodyMesh3D" index="1"]
 transform = Transform3D(1.86846, 0.0758942, 5.96046e-08, -0.0758942, 1.86846, 0, -5.96046e-08, 3.72529e-09, 1.87, 0.054116, -0.00583786, -0.0455965)
 mesh = SubResource("QuadMesh_2w2wt")
 
-[node name="RightLegMesh3D" parent="NPC2/BodyMesh3D" index="2"]
+[node name="RightLegMesh3D" parent="Bill/BodyMesh3D" index="2"]
 transform = Transform3D(1.89704, 0.106075, 0.000318408, -0.106075, 1.89704, -2.42299e-05, -0.000319242, 6.41495e-06, 1.9, -0.241013, 0.0294461, -0.00244677)
 mesh = SubResource("QuadMesh_nn8v0")
 
-[node name="Eyes" parent="NPC2/BodyMesh3D" index="3"]
+[node name="Eyes" parent="Bill/BodyMesh3D" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0875502, 0.171861, 0.0634593)
 mesh = SubResource("QuadMesh_c4dsf")
 
-[node name="LeftArm" parent="NPC2/BodyMesh3D" index="4"]
+[node name="LeftArm" parent="Bill/BodyMesh3D" index="4"]
 transform = Transform3D(2.00942, 0.778634, 0, -0.778634, 2.00942, 0, -1.19209e-07, -2.98023e-08, 2.155, -0.0219688, 0.123828, 0.0442386)
 mesh = SubResource("QuadMesh_lq5nr")
 
-[node name="RightArm" parent="NPC2/BodyMesh3D" index="5"]
+[node name="RightArm" parent="Bill/BodyMesh3D" index="5"]
 transform = Transform3D(-2.08363, -0.390995, 2.98023e-07, -0.390995, 2.08363, 1.77493e-07, -3.57628e-07, 1.19209e-07, -2.12, -0.0127044, 0.124618, -0.073706)
 mesh = SubResource("QuadMesh_oegmn")
 
-[node name="Mouth" parent="NPC2/BodyMesh3D" index="6"]
+[node name="Mouth" parent="Bill/BodyMesh3D" index="6"]
 transform = Transform3D(1.74772, -0.0595133, -0.0667143, 0.0601018, 1.74891, 0.0143557, 0.0661846, -0.0166282, 1.74867, -0.0807009, -0.00067848, 0.071902)
 mesh = SubResource("QuadMesh_wwhqo")
 
-[node name="Hair" parent="NPC2/BodyMesh3D" index="7"]
+[node name="Hair" parent="Bill/BodyMesh3D" index="7"]
 mesh = SubResource("ArrayMesh_dh4e4")
 
-[node name="Hair2" parent="NPC2/BodyMesh3D" index="8"]
+[node name="Hair2" parent="Bill/BodyMesh3D" index="8"]
 mesh = SubResource("ArrayMesh_w6dni")
 
-[node name="Area3D" parent="NPC2/BodyMesh3D" index="9"]
+[node name="Area3D" parent="Bill/BodyMesh3D" index="9"]
 npc_name = "Bill"
 
-[node name="TextBubbleLocation" parent="NPC2/BodyMesh3D/Area3D" index="1"]
+[node name="TextBubbleLocation" parent="Bill/BodyMesh3D/Area3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.438668, 0.24633, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -819,63 +1023,110 @@ surface_material_override/0 = SubResource("StandardMaterial3D_k7lwq")
 [node name="SidingHousenoGround" parent="." instance=ExtResource("21_byjmg")]
 transform = Transform3D(-6.99382e-08, 0, 3.025, 0, 1.695, 0, -1.6, 0, -1.32227e-07, -81.4676, -0.248453, 8.74119)
 
-[node name="NPC3" parent="." instance=ExtResource("1_2vkv0")]
+[node name="Mayor" parent="." instance=ExtResource("1_2vkv0")]
 transform = Transform3D(-0.168064, 0.154536, 1.64927, 0.540804, 1.57202, -0.0921888, -1.56573, 0.52639, -0.208873, -80.6393, 2.04174, 15.9493)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
 axis_lock_angular_y = true
 
-[node name="CollisionShape3D" parent="NPC3" index="0"]
+[node name="CollisionShape3D" parent="Mayor" index="0"]
 transform = Transform3D(0.934845, 0.352832, -0.0396997, -0.354066, 0.934741, -0.0299652, 0.0265363, 0.0420689, 0.998762, -0.426035, 0.188133, 0.708851)
 disabled = true
 
-[node name="BodyMesh3D" parent="NPC3" index="2"]
+[node name="BodyMesh3D" parent="Mayor" index="2"]
 mesh = SubResource("QuadMesh_jbg4q")
 
-[node name="HeadMesh3D" parent="NPC3/BodyMesh3D" index="0"]
+[node name="HeadMesh3D" parent="Mayor/BodyMesh3D" index="0"]
 visible = false
 mesh = SubResource("QuadMesh_ke7l2")
 
-[node name="head_to_body" parent="NPC3/BodyMesh3D/HeadMesh3D" index="0"]
+[node name="head_to_body" parent="Mayor/BodyMesh3D/HeadMesh3D" index="0"]
 visible = false
 
-[node name="LeftLegMesh3D" parent="NPC3/BodyMesh3D" index="1"]
+[node name="LeftLegMesh3D" parent="Mayor/BodyMesh3D" index="1"]
 visible = false
 mesh = SubResource("QuadMesh_f0cc7")
 
-[node name="RightLegMesh3D" parent="NPC3/BodyMesh3D" index="2"]
+[node name="RightLegMesh3D" parent="Mayor/BodyMesh3D" index="2"]
 visible = false
 mesh = SubResource("QuadMesh_tmtnu")
 
-[node name="Eyes" parent="NPC3/BodyMesh3D" index="3"]
+[node name="Eyes" parent="Mayor/BodyMesh3D" index="3"]
 visible = false
 mesh = SubResource("QuadMesh_3b3qc")
 
-[node name="LeftArm" parent="NPC3/BodyMesh3D" index="4"]
+[node name="LeftArm" parent="Mayor/BodyMesh3D" index="4"]
 visible = false
 mesh = SubResource("QuadMesh_u3t71")
 
-[node name="RightArm" parent="NPC3/BodyMesh3D" index="5"]
+[node name="RightArm" parent="Mayor/BodyMesh3D" index="5"]
 visible = false
 mesh = SubResource("QuadMesh_yxid1")
 
-[node name="Mouth" parent="NPC3/BodyMesh3D" index="6"]
+[node name="Mouth" parent="Mayor/BodyMesh3D" index="6"]
 visible = false
 mesh = SubResource("QuadMesh_q1gbl")
 
-[node name="Hair" parent="NPC3/BodyMesh3D" index="7"]
+[node name="Hair" parent="Mayor/BodyMesh3D" index="7"]
 visible = false
 mesh = SubResource("QuadMesh_uiab6")
 
-[node name="Hair2" parent="NPC3/BodyMesh3D" index="8"]
+[node name="Hair2" parent="Mayor/BodyMesh3D" index="8"]
 visible = false
 mesh = SubResource("QuadMesh_7135g")
 
-[node name="Area3D" parent="NPC3/BodyMesh3D" index="9"]
+[node name="Area3D" parent="Mayor/BodyMesh3D" index="9"]
 npc_name = "Mayor Nem A Tode"
 follow_player = false
 
-[editable path="NPC"]
-[editable path="NPC2"]
-[editable path="NPC3"]
+[node name="Carol" parent="." instance=ExtResource("1_2vkv0")]
+transform = Transform3D(-0.978889, -3.96206e-09, 0.204394, -3.72529e-09, 1, -1.25729e-08, -0.204393, -1.74769e-08, -0.978889, -38.926, 0.892999, 22.2693)
+
+[node name="BodyMesh3D" parent="Carol" index="2"]
+transform = Transform3D(1, -2.22045e-16, 0, 0, 1, 8.88178e-16, 0, 0, 1, 0, -0.0742366, 0)
+mesh = SubResource("QuadMesh_1rp3j")
+
+[node name="HeadMesh3D" parent="Carol/BodyMesh3D" index="0"]
+transform = Transform3D(1.545, 0, 0, 8.88178e-16, 1.545, 3.55271e-15, 0, -3.55271e-15, 1.545, -0.0245132, 0.0259901, 0.0457306)
+mesh = SubResource("QuadMesh_m01pr")
+
+[node name="head_to_body" parent="Carol/BodyMesh3D/HeadMesh3D" index="0"]
+transform = Transform3D(0.0477337, 6.93889e-18, 4.65661e-10, 1.38778e-17, 0.0274806, 2.77556e-17, 0, 0, 0.0256963, 0.0219002, 0.0380349, -0.0139847)
+
+[node name="LeftLegMesh3D" parent="Carol/BodyMesh3D" index="1"]
+transform = Transform3D(1.86846, 0.0758942, 0, -0.0758942, 1.86846, 0, 2.98023e-08, -1.86265e-09, 1.87, 0.0816002, 0.0319104, -0.00428009)
+mesh = SubResource("QuadMesh_6b7sa")
+
+[node name="RightLegMesh3D" parent="Carol/BodyMesh3D" index="2"]
+transform = Transform3D(1.89704, 0.106075, 0.000318378, -0.106075, 1.89704, -2.42299e-05, -0.000319213, 6.41309e-06, 1.9, -0.329151, 0.0684336, -0.0445404)
+mesh = SubResource("QuadMesh_x5k46")
+
+[node name="Eyes" parent="Carol/BodyMesh3D" index="3"]
+mesh = SubResource("QuadMesh_b6d6f")
+
+[node name="LeftArm" parent="Carol/BodyMesh3D" index="4"]
+mesh = SubResource("QuadMesh_2to8j")
+
+[node name="RightArm" parent="Carol/BodyMesh3D" index="5"]
+mesh = SubResource("QuadMesh_rdpkt")
+
+[node name="Mouth" parent="Carol/BodyMesh3D" index="6"]
+mesh = SubResource("QuadMesh_csysk")
+
+[node name="Hair" parent="Carol/BodyMesh3D" index="7"]
+transform = Transform3D(1.36, -4.44089e-16, 2.98023e-08, 2.22045e-16, 1.36, 3.55271e-15, 0, -3.55271e-15, 1.36, -0.0415764, 0.0745755, 0.0463123)
+mesh = SubResource("QuadMesh_d2q1o")
+
+[node name="Hair2" parent="Carol/BodyMesh3D" index="8"]
+transform = Transform3D(1.36, -4.44089e-16, 2.98023e-08, 2.22045e-16, 1.36, 3.55271e-15, 0, -3.55271e-15, 1.36, -0.0415726, 0.0745755, 0.0438404)
+visible = false
+mesh = SubResource("QuadMesh_l0njh")
+
+[node name="Area3D" parent="Carol/BodyMesh3D" index="9"]
+npc_name = "Carol"
+
+[editable path="Susan"]
+[editable path="Bill"]
+[editable path="Mayor"]
+[editable path="Carol"]

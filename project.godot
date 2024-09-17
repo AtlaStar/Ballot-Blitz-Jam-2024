@@ -24,12 +24,14 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Bill": "res://puppet pieces/gal/Bill.dch",
+"Carol": "res://Carol.dch",
 "Mayor Nem A Tode": "res://Mayor Nem A Tode.dch",
 "Player": "res://Player.dch",
 "Susan": "res://Susan.dch"
 }
 directories/dtl_directory={
 "Bill_timeline": "res://puppet pieces/timelines/Bill_timeline.dtl",
+"Carol_timeline": "res://Carol_timeline.dtl",
 "Mayor Nem A Tode_timeline": "res://Mayor Nem A Tode_timeline.dtl",
 "Susan_timeline": "res://puppet pieces/timelines/Susan_timeline.dtl",
 "Timeline Root": "res://Timeline Root.dtl"
@@ -38,11 +40,23 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://speech_bubble_test.tres"]
 layout/default_style=""
 variables={
+"BillVars": {
+"asked_to_vote": false,
+"bill_pissed": false,
+"bill_voting": false,
+"met_bill": false
+},
+"CarolVars": {
+"left_for_day": false,
+"met_carol": false,
+"told_story": false
+},
 "carol_voting": false,
+"cunning_val": 0,
 "demure_val": 0,
-"met_bill": false,
 "met_mayor": false,
 "met_susan": false,
+"mindful_val": 0,
 "snarky_val": 0,
 "susan_stat_changed": false,
 "susan_voting": false,
