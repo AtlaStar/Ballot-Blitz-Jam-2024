@@ -1,0 +1,37 @@
+label Bill
+Bill: Stat Breakdown\:\
+Demure\: {PlayerStats.demure_val}\
+Mindfulness\: {PlayerStats.mindful_val}\
+Snark\: {PlayerStats.snarky_val}\
+Cunning\: {PlayerStats.cunning_val}\
+Trololololo\: 42069blazeit
+[end_timeline]
+label Sammy
+Sammy: I've hacked into the matrix to reveal...
+Sammy: THE CREDITS
+Sammy: Mike Jones\:\
+	SFX, Music, Sound design
+Sammy: McKenzie\:\
+	3d Modelling, Storyboarding, Game Design
+Sammy: Derrick Melton\:\
+	Programming, Scene Developer, Storyboarding, Game Design, Writing
+Sammy: Ed\:\
+	Sprite Art, Storyboarding
+Sammy: Eric\:\
+	Character Design, Sprite Art
+Sammy: and....
+Sammy: the maintainers of Dialogic, for making a neat, low-code narrative engine
+[wait time="0.4"]
+Sammy: oh yeah, AND YOUUUUUUUUUUUUU
+[end_timeline]
+label Charles
+Charles: I am the mi---meatman
+Charles: My meat is delicious
+Charles: (waaaaooow, he said the thing)
+[end_timeline]
+label Carol
+Carol: Thank's for playing...and inadvertantly causing the mayor's demise...not sure of the legality of what just happened or who is the mayor now, but I call dibs on A Bank of Tode subsidiary, LLC., NFT.
+[end_timeline]
+label Susan
+Susan: The game? Very mindful, very demure...you this playthrough......not so much
+[end_timeline]

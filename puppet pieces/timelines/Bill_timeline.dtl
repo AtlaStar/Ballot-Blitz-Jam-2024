@@ -1,47 +1,62 @@
-if {troll_val} >= 10:
-	Bill: I heard about what you did to the Mayor...
-	Bill: Gotta say, I approve, "guy" could use getting taken down a few pegs
+if {DialogueShit.bad_ending_test()} == true:
+	jump YellowEnding/Bill
+if {PlayerStats.TrollEndingFlag} == true:
+	jump TrollEnding/Bill
+if {PlayerStats.GrassEnding} == true:
+	jump GrassTimeline/Bill
+if {PlayerStats.troll_val} >= 10:
+	Bill: [mood=Default]I heard about what you did to the Mayor...
+	Bill: [mood=Default]Gotta say, I approve...the "guy" could use getting taken down a few pegs
 	jump ~intro skip
 if {BillVars.bill_pissed} == true:
-	Bill: ...
+	Bill: [mood=Default]...
 	[end_timeline]
 if {BillVars.met_bill} == false:
-	Bill: Get off my lawn!
+	Bill: [mood=Default]Get off my lawn!
 	[wait time="0.1"]
-	Bill: [lspeed=0.4]...[lspeed]
-	Bill: or where my lawn would be if it wasn't against the law
-	Bill: damn Nem...I guess you might know him instead as Mr. Tode.
+	Bill: [mood=Default][lspeed=0.4]...[lspeed]
+	Bill: [mood=Default]or where my lawn would be if it wasn't against the law
+	Bill: [mood=Default]damn Nem...I guess you might know him instead as Mr. Tode.
 	label ~intro skip
-	Bill: The name's Bill
+	Bill: [mood=Default]The name's Bill
 	set {BillVars.met_bill} = true
-Bill: Whaddaya want, kid?
+Bill: [mood=Default]Whaddaya want, kid?
+label ~question root
 - Are you voting? | [if {BillVars.asked_to_vote} == false] [else="hide"]
-	Bill: Do pigs fly?
-	Bill: I just don't see the point; Nem always wins the damn thing. I just feel like I as a lawn lover don't have a voice...clearly [i]someone[/i]in this town likes him enough for him to win...and I don't want to ruffle any feathers...
+	Bill: [mood=Default]Do pigs fly?
+	Bill: [mood=Default]I just don't see the point; Nem always wins the damn thing. I just feel like I as a lawn lover don't have a voice...clearly [i]someone[/i]in this town likes him enough for him to win...and I don't want to ruffle any feathers...
+	set {BillVars.asked_to_vote} = true
+	jump ~question root
 - So what would it take for you to go and vote? | [if {BillVars.asked_to_vote} == true]
-	Bill: Pigs flying...
-	Bill: Alternatively, if you can give me a good suggestion as to who I should vote for that has the same values I have, and I feel like they have a shot, I [i]might decide to vote[/i]
+	Bill: [mood=Default]Pigs flying...
+	Bill: [mood=Default]Alternatively, if you can give me a good suggestion as to who I should vote for that has the same values I have, and I feel like they have a shot, I [i]might decide to vote[/i]
 	- Carol
-		Bill: Eh, Carol is a nice lady, but she is too busy with her business to also run the town...
+		Bill: [mood=Default]Eh, Carol is a nice lady, but she is too busy with her business to also run the town...
 	- Susan
-		Bill: My wife is unironically too demure, she'd be too worried about making the kind of changes this town really needs
-	- Yourself | [if {cunning_val} > 1]
-		Bill: hmmmm....I could do that couldn't I...
-		Bill: ya know, I've heard you are pretty good at strategizing, maybe if you were willing to help me run a campaign?
+		Bill: [mood=Default]My wife is unironically too demure, she'd be too worried about making the kind of changes this town really needs
+	- Yourself | [if {PlayerStats.cunning_val} >= 1]
+		Bill: [mood=Default]hmmmm....I could do that couldn't I...
+		Bill: [mood=Default]ya know, I've heard you are pretty good at strategizing, maybe if you were willing to help me run a campaign?
 		- Sure thing
-			Bill: Great, now go out there and get people to vote for me!
-			set {cunning_val} += 1
+			Bill: [mood=Default]Great, now go out there and get people to vote for me!
+			set {PlayerStats.cunning_val} += 1
+			set {BillVars.bill_running} = true
+			set {BillVars.bill_voting} = true
 		- ...it was a joke
-			set {snarky_val} += 1
-			Bill: ...
-			Bill: Not a very funny one
+			set {PlayerStats.snarky_val} += 1
+			set {BillVars.bill_pissed} = true
+			do DialogueShit.bill()
+			Bill: [mood=Default]...
+			Bill: [mood=Default]Not a very funny one
 	- Someone in Lawn enforcement...
-		Bill: HA! That's a good one...ya know, thinking about it more, I do think I recall Charles having a Ride mower before his injury.
-		Bill: I bet he and I could get people to vote for ONE of us!
-		set {snarky_val} += 1
+		Bill: [mood=Default]HA! That's a good one...ya know, thinking about it more, I do think I recall Charles having a Ride mower before his injury.
+		Bill: [mood=Default]I bet he and I could get people to vote for ONE of us!
+		set {PlayerStats.snarky_val} += 1
+		set {BillVars.bill_voting} = true
 - Why is it against the law to have a lawn?
-	Bill: Because Nem A. Tode is a soul sucking parasite that lives to squash the dreams of man.
-	Bill: [i]Don't tell anyone I said this, but I think he quite literally is a parasite...[/i]
-	Bill: I'm no conspiracy thoerist, but he [i]did[/i] make it illegal to call him one afterall.
-	Bill: Pretty weird "person" if you ask me
+	Bill: [mood=Default]Because Nem A. Tode is a soul sucking parasite that lives to squash the dreams of man.
+	Bill: [mood=Default][i]Don't tell anyone I said this, but I think he quite literally is a parasite...[/i]
+	Bill: [mood=Default]I'm no conspiracy thoerist, but he [i]did[/i] make it illegal to call him one afterall.
+	Bill: [mood=Default]Pretty weird "person" if you ask me
+	set {BillVars.bill_told_nematode_secret} = true
 [end_timeline]

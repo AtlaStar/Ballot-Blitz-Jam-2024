@@ -13,14 +13,14 @@ radius = 0.768684
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_aq1ty")
-x_rot = -6.51
+x_rot = -5.72
 factor = 0.0005
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_hp5ip")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 1.165, 0)
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.739903, 0)
 current = true
 far = 4000.6
 
@@ -39,7 +39,7 @@ offset_bottom = 299.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[center]Speak to {NPC}[/center]"
+text = "[center][color=#ff4e12]Speak to {NPC}[/color][/center]"
 fit_content = true
 script = ExtResource("3_5ul06")
 increment = 0.031

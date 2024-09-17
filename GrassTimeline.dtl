@@ -1,0 +1,49 @@
+label Bill
+Bill: Your stats? Who cares about that! I WON
+Bill: I am gonna grow a lawn finally...once I figure out where to acquire soil...
+[end_timeline]
+label Carol
+Carol: How are we paying for these lawns?
+Carol: Since this likely means my taxes won't be going down, I guess I need to take on a second job...
+Carol: CREDITS\:
+Carol: Mike Jones\:\
+	SFX, Music, Sound design
+Carol: McKenzie\:\
+	3d Modelling, Storyboarding, Game Design
+Carol: Derrick Melton\:\
+	Programming, Scene Developer, Storyboarding, Game Design, Writing
+Carol: Ed\:\
+	Sprite Art, Storyboarding
+Carol: Eric\:\
+	Character Design, Sprite Art
+Carol: The maintainers of Dialogic
+Carol: Thanks for playing!
+[end_timeline]
+label Susan
+Susan: Now that my husband is the mayor, I finally can paint the house mauve...
+Susan: but now it'll look weird against all that green grass.
+[end_timeline]
+label Sammy
+Sammy: I heard that the reason we really don't have grass is because the puppet masters couldn't get it to work in time...whatever that means...
+[end_timeline]
+label Charles
+Charles: Bill didn't provide you the stats? I guess I can give it a try as the  acting Vice-Mayor...what are the stats again?
+Charles: Meat Breakdown\:\
+Demeat\: {PlayerStats.demure_val}\
+Meatfulness\: {PlayerStats.mindful_val}\
+Spam?\: {PlayerStats.snarky_val}\
+Cunnil-- nevermind\: {PlayerStats.cunning_val}\
+Trout, the other [i]other[/i] [b][i]OTHER[/i][/b] white meat\: {PlayerStats.troll_val}
+[end_timeline]
+label Mayor
+"Mayor Nem A Tode": ...damnit, I lost? and I didn't get even a single vote[lspeed=.8]....[lspeed]
+"Mayor Nem A Tode": wait
+[wait time="0.5"]
+"Mayor Nem A Tode": [i]I forgot to vote for myself because I always run unopposed[/i]
+"Mayor Nem A Tode": Restart?
+- Yes
+	do DialogueShit.restart()
+	[end_timeline]
+- No
+	[end_timeline]
+[end_timeline]

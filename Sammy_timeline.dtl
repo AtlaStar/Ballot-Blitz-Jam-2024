@@ -1,0 +1,64 @@
+if {DialogueShit.bad_ending_test()}  ==  true:
+	jump YellowEnding/Sammy
+if {PlayerStats.TrollEndingFlag} == true:
+	jump TrollEnding/Sammy
+if {PlayerStats.GrassEnding} == true:
+	jump GrassTimeline/Sammy
+if {SammyVars.met_sammy} == true:
+	jump ~post_intro
+set {SammyVars.met_sammy} = true
+Sammy: Who are you....
+Sammy: Did Mayor Tode finally decide he needed to be rid of me...or are the puppet masters who fund him trying to make poor little Sammy look crazy again
+[wait time="1.0"]
+Sammy: (Sammy's facade of bravery is beginning to crumble)
+Sammy: Oh no, I didn't mean to suggest that Nem was working with the puppet masters...who are the puppet masters again?
+[wait time="1.0"]
+Sammy: (incoherent concspiracy babbling)
+[wait time="1.0"]
+Sammy: It is so obvious that there isn't even a real choice.
+Sammy: BOTH SIDES ARE THE SAME, I KNOW THIS
+Sammy: Therefore why would you believe I would betray Nem, afterall he ...
+[wait time="1.0"]
+Sammy: (He is definitely still talking, he just doesn't realize it is to himself)
+[wait time="1.0"]
+Sammy: (You hold in a chuckle from a silly wizardposting meme as you think Sammy is about to finish the rant, no reason to be rude afterall)
+Sammy: and that is how I learned we aren't even real! We just exist for the entertainment of the puppet masters! Nem is just a cog in the machine.
+Sammy: We think our world is real, but it only exists for the entertainment of extradimensional horrors who control our every whim!
+- (nod slowly)
+	Sammy: Hmm, you seem like you get it, but idk....I might be able to trust you...eventually
+- (shout "I cast testicular torsion!") | [if {PlayerStats.troll_val} >= 1]
+	jump ~testicle_jump
+- And what would you do if Nematode sent me | [if {BillVars.bill_told_nematode_secret} == true]
+	Sammy: EEEEEEEK
+	Sammy: HOW DID YOU FIND OUT IT WAS MEEEEEEEE
+	- it was only a joke, I am sorry
+		Sammy: No one would joke about that, it is akin to suicide!
+		Sammy: IF you aren't with Nem, you need to leave...NOW
+		Sammy: I don't wanna be collateral damage...
+		Sammy: (Sammy begins breathing heavily)
+		set {SammyVars.sammy_fears_you} = true
+		jump ~sammy_shit_himself
+	- Because I am an ally who also knows his...secret
+		Sammy: (he looks at you cautiously)
+		Sammy: I need more proof than your word...but you seem like I could almost trust you...
+		set {PlayerStats.cunning_val} += 1
+		set {SammyVars.sammy_trust_level_1} = true
+	- We the puppet masters know all! | [if {PlayerStats.troll_val} == 69]
+		label ~testicle_jump
+		Sammy: (Sammy falls to the ground as he begins violently shaking)
+		set {PlayerStats.troll_val} = 420
+		set {SammyVars.sammy_fears_you} = true
+		jump ~sammy_shit_himself
+label ~post_intro
+Sammy: ...yes...
+- So about being on your side? yeah, I lied
+	Sammy: I KNEW IT
+	Sammy: (Sammy shrinks their posture as if trying to hide from you)
+	jump ~sammy_shit_himself
+- Nothing quite yet
+	Sammy: ...don't be seen leaving
+[end_timeline]
+label ~sammy_shit_himself
+Sammy: (Sammy is clearly having a panic attack)
+do DialogueShit.sammy()
+[end_timeline]

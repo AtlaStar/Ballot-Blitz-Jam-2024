@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.27, 0.914453, 1, 1),
+"color": Color(0.06, 1, 0.216667, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
@@ -10,7 +10,7 @@
 },
 "default_portrait": "",
 "description": "",
-"display_name": "Carol",
+"display_name": "Sammy",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),

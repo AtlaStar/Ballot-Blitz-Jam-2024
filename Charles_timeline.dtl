@@ -1,0 +1,89 @@
+if {DialogueShit.bad_ending_test()}  ==  true:
+	jump YellowEnding/Charles
+if {PlayerStats.TrollEndingFlag} == true:
+	jump TrollEnding/Charles
+if {PlayerStats.GrassEnding} == true:
+	jump GrassTimeline/Charles
+if {CharlesVars.met_charles} == true:
+	jump 
+if {CharlesVars.learned_past_2} == true:
+	jump ~post_info
+if {CharlesVars.charles_voting} == true:
+	jump ~voting_charles
+Charles: Got a light kid?
+- No, I don't smoke
+	[wait time="0.2"]
+	Charles: Neither do I kid
+	[wait time="0.2"]
+	Charles: IT'S FOR MY MEEEEEEEEEEEEEEAAAAT!!!!!!!!
+- Sure, here ya go
+	Charles: Yeeeeeeeeessssssss, now I can smoke my meat
+	Charles: (You see the man stick a beef stick in their mouth, and try to light it like a cigar)
+	[wait time="0.5"]
+	Charles: (To your surprise, it appears to light like a cigar?)
+label ~post_intro
+if {CharlesVars.charles_pissed} == true:
+	jump ~angry_charles
+Charles: So, can I interest you in some meat?
+label ~post_meat
+- (Ask about voting)
+	Charles: Yeah, I tried that before
+	Charles: As you can see, it didn't go too well
+	- How so?
+		Charles: The first time I went to vote against the mayor, he must have caught wind because when I showed up...the ballot box dropoff was gone!
+		Charles: The next year I tried voting in person, but he was one step ahead
+		Charles: That year made the news towns over; "Small town mayor employes the help of state militia  to ensure voting integrity"
+		- Why?
+			Charles: To scare us shitless...he ended up [i]almost[/i] getting into a lot of trouble that year...but the guy is made of Teflon.
+			Charles: but...he also learned for the next year to instead use less overt ways of preventing people from voting; making it a major pain in the ass while technically not breaking any laws.
+			set {CharlesVars.learned_past} = true
+			jump ~post_meat
+- (Ask about the "legal" methods to prevent voting) | [if {CharlesVars.learned_past} == true]
+	Charles: Well for starters requiring us to provide ID...
+	Charles: It wouldn't be a huge deal if it weren't for the fact that no one here drives because cars were banned...plus it is a small community anyway
+	Charles: Or that the nearest DMV was already an hour drive away before the ban on cars.
+	- Is that all?
+		Charles: [i]Oh hell no[/i]
+		Charles: Before our licenses expired, Bill and I decided to at least try and vote...but between work and the line...
+		- The line?
+			Charles: He had family from out of town come and stand in line...and he has a [i]very[/i] large family.
+			Charles: How he convinced them being who he is though is anyones guess.
+			set {CharlesVars.learned_past_2} = true
+Charles: Anyway, that's about that.
+label ~post_info
+if {CharlesVars.talk_count} >= 3:
+	set {CharlesVars.charles_pissed} = true
+	do DialogueShit.charles()
+	jump ~angry_charles
+Charles: Got a question?
+- Is there anyway to convince you to vote
+	Charles: You can't....no offense kid but I just met ya....it'd take something truly miraculous to happen to convince me
+	- Bill said he was gonna run | [if {BillVars.bill_running} == true]
+		Charles: Wait[lspeed=1]...[lspeed]
+		Charles: This isn't a joke?
+		Charles: WE ARE GONNA GET OUR LAWNS BACK!!!
+		[wait time="0.5"]
+		Charles: I guess I can sell more than meat again once he wins too...
+		Charles: ah who am I kidding, I love being the meatman
+		Charles: (Entering Epilogue)
+		Charles: (Day after announcements)
+		set {PlayerStats.GrassEnding} = true
+		set {CharlesVars.charles_voting} = true
+		jump ~voting_charles
+	- I'll be back once a miracle has happened
+	set {CharlesVars.talk_count} += 1
+- Anything else about the mayor I should know
+	Charles: I used to be run a grocery store...but the mayor didn't like most of the products and made everything except for meat illegal to consume.
+	Charles: Now they call me the meatman
+	- Your meat is delicious | [if {PlayerStats.troll_val} >= 2]
+		Charles: (smiles devilishly)
+		set {CharlesVars.talk_count} -= 1
+		set {PlayerStats.troll_val} = 69
+	- interesting...
+		[end_timeline]
+[end_timeline]
+label ~voting_charles
+Charles: Thanks for giving me some hope that we can turn this town around!
+label ~angry_charles
+Charles: You don't deserve my meat
+[end_timeline]

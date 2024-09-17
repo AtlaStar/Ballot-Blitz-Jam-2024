@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://c10jljqow0sg"]
+[gd_scene load_steps=155 format=3 uid="uid://c10jljqow0sg"]
 
 [ext_resource type="Texture2D" uid="uid://dh3jhgx2ifr5o" path="res://weird sky.png" id="1_1qkw2"]
 [ext_resource type="PackedScene" uid="uid://3k6svtn0hdeb" path="res://NPC Generic.tscn" id="1_2vkv0"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://2eyn4l2ujvad" path="res://puppet pieces/gal/eyes2.png" id="14_c6meh"]
 [ext_resource type="Texture2D" uid="uid://dv8di2fw0ls3w" path="res://puppet pieces/mouth3.png" id="15_stojr"]
 [ext_resource type="Texture2D" uid="uid://lmng16bxe3ot" path="res://puppet pieces/torso3.png" id="16_qcu58"]
+[ext_resource type="Texture2D" uid="uid://cne74ahb4wpfk" path="res://puppet pieces/mouth4.png" id="16_qlmyd"]
+[ext_resource type="Texture2D" uid="uid://cfhjs2ylpn50u" path="res://puppet pieces/hair3.png" id="17_2o6ub"]
 [ext_resource type="PackedScene" uid="uid://upmgrxd14ocm" path="res://houseno_ground.tscn" id="20_fjc2g"]
 [ext_resource type="Texture2D" uid="uid://1c7norrn6ll8" path="res://wood/wood_0054_color_1k.jpg" id="21_26urg"]
 [ext_resource type="PackedScene" uid="uid://eglcremirc5l" path="res://the worms house.tscn" id="21_byjmg"]
@@ -24,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://c6otdnlcxykuk" path="res://wood/wood_0054_roughness_1k.jpg" id="23_boexa"]
 [ext_resource type="Texture2D" uid="uid://bshryt25e7sxl" path="res://puppet pieces/face2.png" id="23_fftsj"]
 [ext_resource type="Texture2D" uid="uid://b6pfgkh8ys212" path="res://puppet pieces/hair2.png" id="24_x0t7s"]
+[ext_resource type="Texture2D" uid="uid://d3qjh641hsa2" path="res://puppet pieces/Butcher Man 2.png" id="27_w7umr"]
+[ext_resource type="Texture2D" uid="uid://d25nlanf33ore" path="res://puppet pieces/Some dood.png" id="28_nhue1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ftr26"]
 panorama = ExtResource("1_1qkw2")
@@ -219,7 +223,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 diffuse_mode = 3
-albedo_texture = ExtResource("13_6mdq2")
+albedo_texture = ExtResource("16_qlmyd")
 roughness_texture = ExtResource("8_p462h")
 normal_enabled = true
 normal_texture = ExtResource("7_krjn0")
@@ -239,7 +243,7 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 diffuse_mode = 3
 albedo_color = Color(0.65, 0, 0, 1)
-albedo_texture = ExtResource("14_b32a1")
+albedo_texture = ExtResource("17_2o6ub")
 roughness_texture = ExtResource("8_p462h")
 normal_enabled = true
 normal_texture = ExtResource("7_krjn0")
@@ -250,23 +254,9 @@ ao_texture = ExtResource("5_6a0rq")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_7vjhw")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8v1f"]
-resource_local_to_scene = true
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-cull_mode = 2
-diffuse_mode = 3
-albedo_texture = ExtResource("14_b32a1")
-roughness_texture = ExtResource("8_p462h")
-normal_enabled = true
-normal_texture = ExtResource("7_krjn0")
-ao_enabled = true
-ao_texture = ExtResource("5_6a0rq")
-
 [sub_resource type="QuadMesh" id="QuadMesh_ta12h"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_b8v1f")
+material = SubResource("StandardMaterial3D_7vjhw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0omw"]
 resource_local_to_scene = true
@@ -455,10 +445,12 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 cull_mode = 2
 diffuse_mode = 3
+albedo_color = Color(0.81, 0.62424, 0.5508, 1)
 albedo_texture = ExtResource("22_dl2j4")
 roughness_texture = ExtResource("8_p462h")
-emission = Color(0.0313726, 0.329412, 0.0627451, 1)
+emission = Color(0.34184, 0.252893, 0.0702232, 1)
 emission_energy_multiplier = 0.0
+emission_operator = 1
 normal_enabled = true
 normal_scale = 0.5
 normal_texture = ExtResource("7_krjn0")
@@ -758,7 +750,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 cull_mode = 2
 diffuse_mode = 3
-albedo_color = Color(0.86, 0.80582, 0.7396, 1)
+albedo_color = Color(0.86, 0.73616, 0.5848, 1)
 albedo_texture = ExtResource("12_c8lmw")
 roughness_texture = ExtResource("8_p462h")
 normal_enabled = true
@@ -843,6 +835,396 @@ ao_texture = ExtResource("5_6a0rq")
 [sub_resource type="QuadMesh" id="QuadMesh_l0njh"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_fnilh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7l3i"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.54, 0.44082, 0.3348, 1)
+albedo_texture = ExtResource("27_w7umr")
+roughness_texture = ExtResource("8_p462h")
+emission = Color(0.0313726, 0.329412, 0.0627451, 1)
+emission_energy_multiplier = 0.0
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("7_krjn0")
+rim = 0.92
+rim_tint = 0.89
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+heightmap_enabled = true
+heightmap_scale = 2.07
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("6_a08rn")
+uv1_triplanar_sharpness = 2.63902
+texture_filter = 2
+grow_amount = 0.2
+point_size = 1.9
+
+[sub_resource type="QuadMesh" id="QuadMesh_v7cs0"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(11, 11)
+material = SubResource("StandardMaterial3D_l7l3i")
+uv2_padding = 1.45
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4t2i"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("9_2bl1d")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dynkp"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_o4t2i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fvoh"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("10_upnoy")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_shksq"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_1fvoh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1l33"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("10_upnoy")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pi25h"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_f1l33")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqyag"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+albedo_texture = ExtResource("11_qvfau")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_fm2ov"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_jqyag")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_piexi"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("12_c8lmw")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_m8h54"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_piexi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6l0cx"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("12_c8lmw")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_cbpwm"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_6l0cx")
+flip_faces = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k16y5"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+albedo_texture = ExtResource("13_6mdq2")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_3u8gs"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(7, 7)
+material = SubResource("StandardMaterial3D_k16y5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74007"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("14_b32a1")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kss7q"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_74007")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08kw1"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("14_b32a1")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_qvqri"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_08kw1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gubi5"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.42, 0.33992, 0.3108, 1)
+albedo_texture = ExtResource("28_nhue1")
+roughness_texture = ExtResource("8_p462h")
+emission = Color(0.0313726, 0.329412, 0.0627451, 1)
+emission_energy_multiplier = 0.0
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("7_krjn0")
+rim = 0.92
+rim_tint = 0.89
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+heightmap_enabled = true
+heightmap_scale = 2.07
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("6_a08rn")
+uv1_triplanar_sharpness = 2.63902
+texture_filter = 2
+grow_amount = 0.2
+point_size = 1.9
+
+[sub_resource type="QuadMesh" id="QuadMesh_wrgc2"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(11, 11)
+material = SubResource("StandardMaterial3D_gubi5")
+uv2_padding = 1.45
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gicta"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("9_2bl1d")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_17jvs"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_gicta")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfrts"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("10_upnoy")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_m44xa"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_bfrts")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqpc6"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("10_upnoy")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vlwkp"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_xqpc6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08kq5"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+albedo_texture = ExtResource("11_qvfau")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_2w0ql"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_08kq5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnljp"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("12_c8lmw")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_qo5sa"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_wnljp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nns4k"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("12_c8lmw")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4hy7u"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_nns4k")
+flip_faces = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31yfh"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+albedo_texture = ExtResource("13_6mdq2")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_31h6v"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(7, 7)
+material = SubResource("StandardMaterial3D_31yfh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vcw5"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("14_b32a1")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_b60cd"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_4vcw5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxm2p"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("14_b32a1")
+roughness_texture = ExtResource("8_p462h")
+normal_enabled = true
+normal_texture = ExtResource("7_krjn0")
+ao_enabled = true
+ao_texture = ExtResource("5_6a0rq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vwgtx"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_nxm2p")
 
 [node name="Stage" type="StaticBody3D"]
 
@@ -953,12 +1335,15 @@ mesh = SubResource("QuadMesh_frrse")
 mesh = SubResource("QuadMesh_hm5qo")
 
 [node name="Mouth" parent="Susan/BodyMesh3D" index="6"]
+transform = Transform3D(1.74103, -0.0804443, -0.157633, 0.0606059, 1.73552, -0.216303, 0.166271, 0.209735, 1.72941, -0.0179969, -0.0343711, 0.029489)
 mesh = SubResource("QuadMesh_noehn")
 
 [node name="Hair" parent="Susan/BodyMesh3D" index="7"]
+transform = Transform3D(1.735, 0, 0, 0, 2.22, 0, 0, 0, 1.735, -0.05814, -0.110317, 0.0517085)
 mesh = SubResource("QuadMesh_rmica")
 
 [node name="Hair2" parent="Susan/BodyMesh3D" index="8"]
+transform = Transform3D(1.735, 0, 0, 0, 2.22, 0, 0, 0, 1.735, -0.0581402, -0.110317, 0.049238)
 mesh = SubResource("QuadMesh_ta12h")
 
 [node name="Area3D" parent="Susan/BodyMesh3D" index="9"]
@@ -1126,7 +1511,101 @@ mesh = SubResource("QuadMesh_l0njh")
 [node name="Area3D" parent="Carol/BodyMesh3D" index="9"]
 npc_name = "Carol"
 
+[node name="Charles" parent="." instance=ExtResource("1_2vkv0")]
+transform = Transform3D(-0.966524, 0, 0.256576, 0, 1, 0, -0.256576, 0, -0.966524, 20.4992, 1.0889, 22.5283)
+
+[node name="BodyMesh3D" parent="Charles" index="2"]
+transform = Transform3D(1.425, 0, 0, 0, 1.425, 0, 0, 0, 1.425, 0, 0, 0)
+mesh = SubResource("QuadMesh_v7cs0")
+
+[node name="HeadMesh3D" parent="Charles/BodyMesh3D" index="0"]
+visible = false
+mesh = SubResource("QuadMesh_dynkp")
+
+[node name="LeftLegMesh3D" parent="Charles/BodyMesh3D" index="1"]
+visible = false
+mesh = SubResource("QuadMesh_shksq")
+
+[node name="RightLegMesh3D" parent="Charles/BodyMesh3D" index="2"]
+visible = false
+mesh = SubResource("QuadMesh_pi25h")
+
+[node name="Eyes" parent="Charles/BodyMesh3D" index="3"]
+visible = false
+mesh = SubResource("QuadMesh_fm2ov")
+
+[node name="LeftArm" parent="Charles/BodyMesh3D" index="4"]
+visible = false
+mesh = SubResource("QuadMesh_m8h54")
+
+[node name="RightArm" parent="Charles/BodyMesh3D" index="5"]
+visible = false
+mesh = SubResource("QuadMesh_cbpwm")
+
+[node name="Mouth" parent="Charles/BodyMesh3D" index="6"]
+visible = false
+mesh = SubResource("QuadMesh_3u8gs")
+
+[node name="Hair" parent="Charles/BodyMesh3D" index="7"]
+visible = false
+mesh = SubResource("QuadMesh_kss7q")
+
+[node name="Hair2" parent="Charles/BodyMesh3D" index="8"]
+visible = false
+mesh = SubResource("QuadMesh_qvqri")
+
+[node name="Area3D" parent="Charles/BodyMesh3D" index="9"]
+npc_name = "Charles"
+
+[node name="Sammy" parent="." instance=ExtResource("1_2vkv0")]
+transform = Transform3D(0.82277, 0, -0.568375, 0, 1, 0, 0.568375, 0, 0.82277, 37.327, 0.893, -3.08203)
+
+[node name="BodyMesh3D" parent="Sammy" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.149441, 0)
+mesh = SubResource("QuadMesh_wrgc2")
+
+[node name="HeadMesh3D" parent="Sammy/BodyMesh3D" index="0"]
+visible = false
+mesh = SubResource("QuadMesh_17jvs")
+
+[node name="LeftLegMesh3D" parent="Sammy/BodyMesh3D" index="1"]
+visible = false
+mesh = SubResource("QuadMesh_m44xa")
+
+[node name="RightLegMesh3D" parent="Sammy/BodyMesh3D" index="2"]
+visible = false
+mesh = SubResource("QuadMesh_vlwkp")
+
+[node name="Eyes" parent="Sammy/BodyMesh3D" index="3"]
+visible = false
+mesh = SubResource("QuadMesh_2w0ql")
+
+[node name="LeftArm" parent="Sammy/BodyMesh3D" index="4"]
+visible = false
+mesh = SubResource("QuadMesh_qo5sa")
+
+[node name="RightArm" parent="Sammy/BodyMesh3D" index="5"]
+visible = false
+mesh = SubResource("QuadMesh_4hy7u")
+
+[node name="Mouth" parent="Sammy/BodyMesh3D" index="6"]
+visible = false
+mesh = SubResource("QuadMesh_31h6v")
+
+[node name="Hair" parent="Sammy/BodyMesh3D" index="7"]
+visible = false
+mesh = SubResource("QuadMesh_b60cd")
+
+[node name="Hair2" parent="Sammy/BodyMesh3D" index="8"]
+visible = false
+mesh = SubResource("QuadMesh_vwgtx")
+
+[node name="Area3D" parent="Sammy/BodyMesh3D" index="9"]
+npc_name = "Sammy"
+
 [editable path="Susan"]
 [editable path="Bill"]
 [editable path="Mayor"]
 [editable path="Carol"]
+[editable path="Charles"]
+[editable path="Sammy"]

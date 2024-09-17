@@ -19,22 +19,31 @@ config/icon="res://icon.svg"
 
 EventBus="*res://EventBus.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+DialogueShit="*res://DialogueShit.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "Bill": "res://puppet pieces/gal/Bill.dch",
 "Carol": "res://Carol.dch",
+"Charles": "res://Charles.dch",
 "Mayor Nem A Tode": "res://Mayor Nem A Tode.dch",
 "Player": "res://Player.dch",
+"Sammy": "res://Sammy.dch",
 "Susan": "res://Susan.dch"
 }
 directories/dtl_directory={
 "Bill_timeline": "res://puppet pieces/timelines/Bill_timeline.dtl",
 "Carol_timeline": "res://Carol_timeline.dtl",
+"Charles_timeline": "res://Charles_timeline.dtl",
+"EndingTimeline": "res://EndingTimeline.dtl",
+"GrassTimeline": "res://GrassTimeline.dtl",
 "Mayor Nem A Tode_timeline": "res://Mayor Nem A Tode_timeline.dtl",
+"Sammy_timeline": "res://Sammy_timeline.dtl",
 "Susan_timeline": "res://puppet pieces/timelines/Susan_timeline.dtl",
-"Timeline Root": "res://Timeline Root.dtl"
+"Timeline Root": "res://Timeline Root.dtl",
+"TrollEnding": "res://TrollEnding.dtl",
+"YellowEnding": "res://YellowEnding.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://speech_bubble_test.tres"]
@@ -43,25 +52,51 @@ variables={
 "BillVars": {
 "asked_to_vote": false,
 "bill_pissed": false,
+"bill_running": false,
+"bill_told_nematode_secret": false,
 "bill_voting": false,
 "met_bill": false
 },
 "CarolVars": {
+"carol_pissed": false,
+"carol_voting": false,
 "left_for_day": false,
 "met_carol": false,
 "told_story": false
 },
-"carol_voting": false,
+"CharlesVars": {
+"charles_pissed": false,
+"charles_voting": false,
+"learned_past": false,
+"learned_past_2": false,
+"met_charles": false,
+"talk_count": 0
+},
+"MayorVars": {
+"met_mayor": false,
+"talked_to_mayor_count": 0
+},
+"PlayerStats": {
+"GrassEnding": false,
+"TrollEndingFlag": false,
 "cunning_val": 0,
 "demure_val": 0,
-"met_mayor": false,
-"met_susan": false,
 "mindful_val": 0,
 "snarky_val": 0,
-"susan_stat_changed": false,
-"susan_voting": false,
-"talked_to_mayor_count": 0,
 "troll_val": 0
+},
+"SammyVars": {
+"met_sammy": false,
+"sammy_fears_you": false,
+"sammy_trust_level_1": false,
+"sammy_voting": false
+},
+"SusanVars": {
+"met_susan": false,
+"susan_pissed": false,
+"susan_stat_changed": false,
+"susan_voting": false
+}
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

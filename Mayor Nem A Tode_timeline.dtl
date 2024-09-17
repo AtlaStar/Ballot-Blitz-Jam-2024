@@ -1,17 +1,39 @@
-if {met_mayor} == false:
+if {DialogueShit.bad_ending_test()}  ==  true:
+	jump YellowEnding/Mayor
+if {PlayerStats.TrollEndingFlag} == true:
+	[end_timeline]
+if {PlayerStats.GrassEnding} == true:
+	jump GrassTimeline/Mayor
+if {MayorVars.met_mayor} == false:
 	"Mayor Nem A Tode": [mood=Worm]EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEK
 	"Mayor Nem A Tode": [mood=Worm]YOU NEED TO LEAVE THE PREMISES BEFORE I AM FORCED TO HAVE YOU ARRESTED FOR HARRASSING THE TOWN OFFICIAL
-	set {met_mayor} = true
-if {talked_to_mayor_count} > 10:
+	set {MayorVars.met_mayor} = true
+if {MayorVars.talked_to_mayor_count} > 10:
 	"Mayor Nem A Tode": [mood=Dead](Now you are just being a bully)
+	- (ask "Would you still love me if I was a parasitic worm" | [if {PlayerStats.troll_val} == 420]
+		jump ~secret tunnel
+	- (leave)
+		[end_timeline]
 	[end_timeline]
-set {talked_to_mayor_count} += 1
-if {talked_to_mayor_count} >= 3:
+set {MayorVars.talked_to_mayor_count} += 1
+if {MayorVars.talked_to_mayor_count} >= 3:
 	"Mayor Nem A Tode": [mood=Worm][lspeed=.0001]REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE[lspeed]
-	set {snarky_val} += 0.5
-	set {demure_val} -= 0.5
-	if {talked_to_mayor_count} == 10:
-		set {troll_val} = 10
-		"Mayor Nem A Tode": [mood=Dead](You feel as if your trolling has altered the fabric of the universe, imbuing you with max troll stat)
+	set {PlayerStats.snarky_val} += 0.5
+	set {PlayerStats.demure_val} -= 0.5
+	if {MayorVars.talked_to_mayor_count} == 10:
+		set {PlayerStats.troll_val} = 10
+		"Mayor Nem A Tode": [mood=Dead](You feel as if your trolling has altered the fabric of the universe, imbuing your troll stat with limitless potential)
+		[end_timeline]
 else:
 	"Mayor Nem A Tode": [mood=Worm]UNACCEPTIBLE! THIS IS WHY OUTSIDERS SHOULD STAY AWAY FROM THIS TOWN
+[end_timeline]
+label ~secret tunnel
+"Mayor Nem A Tode": [mood=EVIL]DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+[wait time="0.3"]
+"Mayor Nem A Tode": [mood=EVILER]DDDDDDDDDIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII....................
+[wait time="1.0"]
+"Mayor Nem A Tode": [mood=Dead]..ie?
+[wait time="1.0"]
+"Mayor Nem A Tode": [mood=Dead](The mayor has appeared to fall over, dead from psychic damage inflicted by a high level troll wizard)
+"Mayor Nem A Tode": [mood=Dead](Entering Epilogue)
+set {PlayerStats.TrollEndingFlag} = true

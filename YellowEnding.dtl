@@ -1,0 +1,38 @@
+label Susan
+Susan: You're not a very nice person...I thought the goal was to encourage us to vote
+[end_timeline]
+label Bill
+Bill: Oh, you want your stats do ya...well here are you stats!
+Bill: [color=yellow]Stat Breakdown\:\
+[color=yellow]Demure\: {PlayerStats.demure_val}\
+[color=yellow]Mindfulness\: {PlayerStats.mindful_val}\
+[color=yellow]Snark\: {PlayerStats.snarky_val}\
+[color=yellow]Cunning\: {PlayerStats.cunning_val}\
+[color=yellow]Trololololo\: {PlayerStats.troll_val}
+Bill: Why are they yellow?
+Bill: ...best not to ask
+[end_timeline]
+label Carol
+Carol: I may have had some really interesting things to say that you'll never know now.
+Carol: At least not until you restart the game
+[end_timeline]
+label Sammy
+Sammy: What kind of person leads someone on, just to pull the rug out...and for what, to amuse the higher dimensional beings who stare at us for amusement...do you really BOW TO THESE PEOPLE
+Sammy: CREDITS\:
+Sammy: Mike Jones\:\\
+	SFX, Music, Sound design
+Sammy: McKenzie\:\\
+	3d Modelling, Storyboarding, Game Design
+Sammy: Derrick Melton\:\\
+	Programming, Scene Developer, Storyboarding, Game Design, Writing
+Sammy: Ed\:\\
+	Sprite Art, Storyboarding
+Sammy: Eric\:\\
+	Character Design, Sprite Art
+Sammy: The maintainers of Dialogic
+Sammy: Thanks for playing!
+[end_timeline]
+label Charles
+[end_timeline]
+label Mayor
+[end_timeline]
