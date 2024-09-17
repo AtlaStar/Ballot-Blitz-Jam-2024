@@ -1,6 +1,7 @@
 if {CarolVars.left_for_day} == true:
 	[end_timeline]
 if {CarolVars.met_carol} == false:
+	set {CarolVars.met_carol} = true
 	Carol: Oh, a new face? The name is Carol.
 	Carol: Also sorry in advanced, we're currently closed.
 	- Why is that? | [if {CarolVars.told_story} == false]
