@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy5entsoepwpc"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_aq1ty"]
+[ext_resource type="Script" path="res://scripts/player_interact.gd" id="3_5ul06"]
+[ext_resource type="AudioStream" uid="uid://di7bxlvyp63y7" path="res://audio/dance_o_the_chicken_hut.wav" id="3_28nj0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hp5ip"]
+radius = 0.433216
+height = 2.12977
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6mnw3"]
+radius = 0.768684
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_aq1ty")
+x_rot = -5.72
+factor = 0.0005
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hp5ip")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.739903, 0)
+current = true
+far = 4000.6
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_6mnw3")
+
+[node name="Interact" type="RichTextLabel" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 276.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][color=#ff4e12]Speak to {NPC}[/color][/center]"
+fit_content = true
+script = ExtResource("3_5ul06")
+increment = 0.031
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_28nj0")
+autoplay = true
+mix_target = 2
+bus = &"Music"
+playback_type = 1

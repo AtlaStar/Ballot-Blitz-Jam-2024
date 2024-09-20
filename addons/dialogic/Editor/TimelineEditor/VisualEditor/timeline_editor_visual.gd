@@ -158,8 +158,11 @@ func _ready() -> void:
 	event_node = load("res://addons/dialogic/Editor/Events/EventBlock/event_block.tscn")
 
 	batch_loaded.connect(_on_batch_loaded)
-
-	await find_parent('EditorView').ready
+	
+	var parent = find_parent('EditorView')
+	if parent == null:
+		pass
+	await parent.ready
 	timeline_editor.editors_manager.sidebar.content_item_activated.connect(_on_content_item_clicked)
 	%Timeline.child_order_changed.connect(update_content_list)
 
@@ -420,8 +423,10 @@ func get_events_indexed(events:Array) -> Dictionary:
 	var indexed_dict := {}
 	for event in events:
 		# do not collect selected end branches (e.g. on delete, copy, etc.)
+		print(event)
 		if event.resource is DialogicEndBranchEvent:
 			continue
+		print(event.resource.to_text() + " being checked")
 
 		indexed_dict[event.get_index()] = event.resource.to_text()
 
@@ -434,6 +439,8 @@ func get_events_indexed(events:Array) -> Dictionary:
 				indexed_dict[event.get_index()] += str(events.find(event.parent_node))
 			else: # add global index
 				indexed_dict[event.get_index()] += '#'+str(event.parent_node.get_index())
+		else:
+			print("the events weren't actually indexed because the resource was " + str(event.resource))
 	return indexed_dict
 
 

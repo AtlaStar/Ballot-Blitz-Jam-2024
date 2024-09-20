@@ -20,29 +20,28 @@ var max_angle = -min_angle
 var wiggle = 0
 var last_direction = Vector3(0.0,0.0,0.0)
 var node_list = []
+var character = null
+var style
+
+func _init():
+	await Dialogic.ready
+	style = Dialogic.Styles.load_style("speech_bubble_test")
+	for node in get_tree().get_nodes_in_group("Characters"):
+		await node.ready
+		var id = node.get_node("BodyMesh3D/Area3D")
+		id.facing_player.connect(access_dialogue.bind(id))
+		id.look_towards = self
+		style.register_character(id.npc_name, id.get_node("TextBubbleLocation"))
 
 func _ready() -> void:
-	EventBus.playerEntered.connect(enqueue_node)
-	EventBus.playerLeft.connect(remove_node)
-	EventBus.endOfDialog.connect(remove_node)
-	cam.rotation.x = x_rot
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-func enqueue_node(id):
-	node_list.push_back(id)
-
-func remove_node(id):
-	node_list = []
-	print(node_list)
-
-func access_dialog():
-	var id = node_list.front()
-	if Dialogic.current_timeline != null && id != null:
+func access_dialogue(id):
+	character = null
+	if id == null || Dialogic.current_timeline != null:
 		return
 	if id is Node3D:
-		var style = Dialogic.Styles.load_style("speech_bubble_test")
-		style.register_character(id.npc_name, id.get_node("TextBubbleLocation"))
 		var layout = Dialogic.start(id.npc_name + "_timeline")
 
 func _physics_process(_delta: float) -> void:
@@ -56,8 +55,6 @@ func _physics_process(_delta: float) -> void:
 		var npc_name = node_list.front().npc_name
 		text_node.text = original_text.format({"NPC": npc_name})
 	# Handle jump.
-	if Input.is_action_just_pressed("dialogic_default_action"):
-		access_dialog()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -81,12 +78,28 @@ func _physics_process(_delta: float) -> void:
 	
 	move_and_slide()
 	cam.rotation.x = x_rot + cos(wiggle) * factor
-	
 	CameraPivot.rotation_degrees.x = look_rot.x
 	rotation_degrees.y = look_rot.y
+	
+	var space_state = get_world_3d().direct_space_state
+	var mousepos = get_viewport().get_mouse_position()
+	var origin = cam.project_ray_origin(mousepos)
+	var end = origin + cam.project_ray_normal(mousepos) * 1000.0
+	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	var result = space_state.intersect_ray(query)
+	
+	if result:
+		match result.collider:
+			var body when RigidBody3D:
+				character = body.get_node("BodyMesh3D/Area3D")
+					
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		look_rot.y -= (event.relative.x * sensitivity)
-		look_rot.x -= (event.relative.y * sensitivity)
+		look_rot.y -= (event.screen_relative.x * sensitivity)
+		look_rot.x -= (event.screen_relative.y * sensitivity)
 		look_rot.x = clamp(look_rot.x, min_angle, max_angle)
+	if event is InputEventMouseButton && event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
+		if character != null:
+			character.dialogue_begin.emit(self)
+		#access_dialogue(character)

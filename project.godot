@@ -49,7 +49,7 @@ directories/dtl_directory={
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://speech_bubble_test.tres"]
-layout/default_style=""
+layout/default_style="res://speech_bubble_test.tres"
 variables={
 "BillVars": {
 "asked_to_vote": false,
@@ -117,7 +117,7 @@ animations/cross_fade_default_length=0.5
 choices/autofocus_first=true
 choices/delay=0.2
 choices/reveal_delay=0
-choices/reveal_by_input=false
+choices/reveal_by_input=true
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}

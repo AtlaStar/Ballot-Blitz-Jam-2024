@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=8 format=3 uid="uid://dt6iotpp7scjl"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=8 format=3 uid="uid://0utwq3pnymvu"]
 
 [ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_5lg86"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_w2ucq"]
@@ -9,17 +9,23 @@
 [sub_resource type="Resource" id="Resource_sr5b4"]
 script = ExtResource("2_w2ucq")
 scene = ExtResource("3_63mis")
-overrides = {}
+overrides = {
+"disabled": "true"
+}
 
 [sub_resource type="Resource" id="Resource_ppty0"]
 script = ExtResource("2_w2ucq")
 scene = ExtResource("4_4ym5k")
-overrides = {}
+overrides = {
+"box_wobble_amount": "1.0"
+}
 
 [resource]
 script = ExtResource("5_jj4a8")
 name = "speech_bubble_test"
 base_scene = ExtResource("1_5lg86")
-base_overrides = {}
+base_overrides = {
+"bubble_count": "4.0"
+}
 layers = Array[ExtResource("2_w2ucq")]([SubResource("Resource_sr5b4"), SubResource("Resource_ppty0")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 1
