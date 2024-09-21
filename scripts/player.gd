@@ -8,10 +8,9 @@ const WIGGLE_INI = 0
 @export var x_rot = rotation.x
 @export var increment = PI/16
 @export_range(0.0005, 0.002) var factor = .002
-@onready var cam = get_node("Camera")
-@onready var text_node = get_node("Interact")
+@onready var cam = $Camera
+@onready var text_node = $Interact
 @onready var original_text = text_node.text
-@onready var CameraPivot = $Camera
 @export var sensitivity = 1.0
 
 var look_rot : Vector2
@@ -92,7 +91,7 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 		cam.rotation.x = x_rot + cos(wiggle) * factor
 
-		CameraPivot.rotation_degrees.x = look_rot.x
+		cam.rotation_degrees.x = look_rot.x
 		rotation_degrees.y = look_rot.y
 		last_cam_rot = cam.rotation_degrees
 		last_player_rot = rotation_degrees
@@ -120,4 +119,3 @@ func _input(event):
 	if event is InputEventMouseButton && event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
 		if character != null:
 			character.dialogue_begin.emit(self)
-		#access_dialogue(character)
