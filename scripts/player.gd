@@ -22,6 +22,10 @@ var last_direction = Vector3(0.0,0.0,0.0)
 var node_list = []
 var character = null
 var style
+var motion = true;
+
+var last_cam_rot = Vector3.ZERO
+var last_player_rot = Vector3.ZERO
 
 func _init():
 	await Dialogic.ready
@@ -35,14 +39,22 @@ func _init():
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Dialogic.timeline_ended.connect(reset_mouse_look)
 
 
 func access_dialogue(id):
 	character = null
+	motion = false;
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	if id == null || Dialogic.current_timeline != null:
 		return
 	if id is Node3D:
 		var layout = Dialogic.start(id.npc_name + "_timeline")
+
+func reset_mouse_look():
+	motion = true;
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	look_rot = Vector2(last_cam_rot.x, last_player_rot.y)
 
 func _physics_process(_delta: float) -> void:
 	# Add the gravity.
@@ -61,25 +73,29 @@ func _physics_process(_delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if direction:
-		wiggle += increment * direction.z
-		last_direction = direction
+	if motion:
+		if direction:
+			wiggle += increment * direction.z
+			last_direction = direction
 
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		if !is_equal_approx(cam.rotation.x, x_rot):
-			wiggle += increment * last_direction.z
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
 		else:
-			last_direction = Vector3.ZERO
-			wiggle = WIGGLE_INI;
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-	
-	move_and_slide()
-	cam.rotation.x = x_rot + cos(wiggle) * factor
-	CameraPivot.rotation_degrees.x = look_rot.x
-	rotation_degrees.y = look_rot.y
+			if !is_equal_approx(cam.rotation.x, x_rot):
+				wiggle += increment * last_direction.z
+			else:
+				last_direction = Vector3.ZERO
+				wiggle = WIGGLE_INI;
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+		move_and_slide()
+		cam.rotation.x = x_rot + cos(wiggle) * factor
+
+		CameraPivot.rotation_degrees.x = look_rot.x
+		rotation_degrees.y = look_rot.y
+		last_cam_rot = cam.rotation_degrees
+		last_player_rot = rotation_degrees
 	
 	var space_state = get_world_3d().direct_space_state
 	var mousepos = get_viewport().get_mouse_position()
@@ -95,6 +111,8 @@ func _physics_process(_delta: float) -> void:
 					
 
 func _input(event):
+	if !motion:
+		pass
 	if event is InputEventMouseMotion:
 		look_rot.y -= (event.screen_relative.x * sensitivity)
 		look_rot.x -= (event.screen_relative.y * sensitivity)
